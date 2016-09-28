@@ -1,0 +1,28 @@
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+</head>
+{% endblock %}
+<body class="{{body_class}}" data-template="base.twig">
+<header class="header">
+	{% block header %}
+		<a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
+		{% include 'components/navigation.twig' %}
+	{% endblock %}
+</header>
+<main role="main" class="content-wrapper">
+	{% if title %}<h1>{{title}}</h1>{% endif %}
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+
+</main>
+{% block footer %}
+	<footer>
+		{% include 'footer.twig' %}
+	</footer>
+	{{ function('wp_footer') }}
+{% endblock %}
+</body>
+</html>

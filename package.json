@@ -1,0 +1,38 @@
+{
+  "name": "buscemi",
+  "version": "1.0.0",
+  "description": "![Buscemi](buscemi.png)",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://joshre@github.com/joshre/buscemi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshre/buscemi/issues"
+  },
+  "homepage": "https://github.com/joshre/buscemi#readme",
+  "devDependencies": {
+    "cssnano": "*",
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssnano": "*",
+    "grunt-grunticon": "*",
+    "grunt-notify": "*",
+    "grunt-postcss": "^0.8.0",
+    "grunt-svgmin": "*",
+    "postcss-convert-values": "^2.3.4",
+    "postcss-font-magician": "^1.4.0"
+  }
+}
