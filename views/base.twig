@@ -5,9 +5,11 @@
 </head>
 {% endblock %}
 <body class="{{body_class}}" data-template="base.twig">
-<header class="header">
+<header class="header bg--yellow">
 	{% block header %}
-		<a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
+		<a class="hdr-logo-link" href="/" rel="home">
+		<i class="icon-logo-horiz" data-grunticon-embed></i>
+		</a>
 		{% include 'components/navigation.twig' %}
 	{% endblock %}
 </header>

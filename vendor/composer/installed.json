@@ -1,18 +1,21 @@
 [
     {
         "name": "composer/installers",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/installers.git",
-            "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
-            "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804",
             "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
         },
         "replace": {
             "roundcube/plugin-installer": "*",
@@ -22,18 +25,18 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2015-02-18 17:17:01",
-        "type": "composer-installer",
+        "time": "2016-08-13 20:53:52",
+        "type": "composer-plugin",
         "extra": {
-            "class": "Composer\\Installers\\Installer",
+            "class": "Composer\\Installers\\Plugin",
             "branch-alias": {
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Composer\\Installers\\": "src/"
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -48,28 +51,35 @@
             }
         ],
         "description": "A multi-framework Composer library installer",
-        "homepage": "http://composer.github.com/installers/",
+        "homepage": "https://composer.github.io/installers/",
         "keywords": [
             "Craft",
             "Dolibarr",
             "Hurad",
+            "ImageCMS",
             "MODX Evo",
+            "Mautic",
             "OXID",
+            "Plentymarkets",
+            "RadPHP",
             "SMF",
             "Thelia",
             "WolfCMS",
             "agl",
             "aimeos",
             "annotatecms",
+            "attogram",
             "bitrix",
             "cakephp",
             "chef",
+            "cockpit",
             "codeigniter",
             "concrete5",
             "croogo",
             "dokuwiki",
             "drupal",
             "elgg",
+            "expressionengine",
             "fuelphp",
             "grav",
             "installer",
@@ -86,42 +96,70 @@
             "piwik",
             "ppi",
             "puppet",
+            "reindex",
             "roundcube",
             "shopware",
             "silverstripe",
             "symfony",
             "typo3",
             "wordpress",
+            "yawik",
             "zend",
             "zikula"
         ]
     },
     {
-        "name": "twig/twig",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "wpackagist-plugin/timber-library",
+        "version": "0.22.6",
+        "version_normalized": "0.22.6.0",
         "source": {
-            "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "19f8d073aaf7cadf6218d88c9f651657cfda9211"
+            "type": "svn",
+            "url": "https://plugins.svn.wordpress.org/timber-library/",
+            "reference": "tags/0.22.6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/19f8d073aaf7cadf6218d88c9f651657cfda9211",
-            "reference": "19f8d073aaf7cadf6218d88c9f651657cfda9211",
+            "url": "https://downloads.wordpress.org/plugin/timber-library.0.22.6.zip",
+            "reference": "tags/0.22.6",
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "~1.0"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "homepage": "https://wordpress.org/plugins/timber-library/"
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.25.0",
+        "version_normalized": "1.25.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
+            "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2.7"
         },
-        "time": "2015-02-27 16:10:10",
+        "require-dev": {
+            "symfony/debug": "~2.7",
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2016-09-21 23:05:12",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.18-dev"
+                "dev-master": "1.25-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Twig_": "lib/"
@@ -157,17 +195,17 @@
     },
     {
         "name": "asm89/twig-cache-extension",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/asm89/twig-cache-extension.git",
-            "reference": "1a13fe102241a1b22d2e72a19f31212f328b57a7"
+            "reference": "37cfee1f06fe8372cbe714d2d9224db276790936"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/asm89/twig-cache-extension/zipball/1a13fe102241a1b22d2e72a19f31212f328b57a7",
-            "reference": "1a13fe102241a1b22d2e72a19f31212f328b57a7",
+            "url": "https://api.github.com/repos/asm89/twig-cache-extension/zipball/37cfee1f06fe8372cbe714d2d9224db276790936",
+            "reference": "37cfee1f06fe8372cbe714d2d9224db276790936",
             "shasum": ""
         },
         "require": {
@@ -177,14 +215,17 @@
         "require-dev": {
             "doctrine/cache": "~1.0"
         },
-        "time": "2014-07-28 07:30:56",
+        "suggest": {
+            "psr/cache-implementation": "To make use of PSR-6 cache implementation via PsrCacheAdapter."
+        },
+        "time": "2016-06-14 09:16:57",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0-dev"
+                "dev-master": "1.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "": "lib/"
@@ -209,54 +250,91 @@
         ]
     },
     {
-        "name": "jarednova/php-router",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
+        "name": "altorouter/altorouter",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dannyvankooten/AltoRouter.git",
+            "reference": "09d9d946c546bae6d22a7654cdb3b825ffda54b4"
+        },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/jarednova/PHP-Router/archive/fix_psr_0.zip",
-            "reference": null,
-            "shasum": null
+            "url": "https://api.github.com/repos/dannyvankooten/AltoRouter/zipball/09d9d946c546bae6d22a7654cdb3b825ffda54b4",
+            "reference": "09d9d946c546bae6d22a7654cdb3b825ffda54b4",
+            "shasum": ""
         },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2014-04-16 09:44:40",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "AltoRouter.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Danny van Kooten",
+                "email": "dannyvankooten@gmail.com",
+                "homepage": "http://dannyvankooten.com/"
+            },
+            {
+                "name": "Koen Punt",
+                "homepage": "https://github.com/koenpunt"
+            },
+            {
+                "name": "niahoo",
+                "homepage": "https://github.com/niahoo"
+            }
+        ],
+        "description": "A lightning fast router for PHP",
+        "homepage": "https://github.com/dannyvankooten/AltoRouter",
+        "keywords": [
+            "lightweight",
+            "router",
+            "routing"
+        ]
+    },
+    {
+        "name": "upstatement/routes",
+        "version": "0.4",
+        "version_normalized": "0.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Upstatement/routes.git",
+            "reference": "fae7d46f56e8b5775f072774941a5f0a25cb86f3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Upstatement/routes/zipball/fae7d46f56e8b5775f072774941a5f0a25cb86f3",
+            "reference": "fae7d46f56e8b5775f072774941a5f0a25cb86f3",
+            "shasum": ""
+        },
+        "require": {
+            "altorouter/altorouter": "1.1.0",
+            "composer/installers": "~1.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "satooshi/php-coveralls": "dev-master",
+            "wp-cli/wp-cli": "*"
+        },
+        "time": "2016-07-06 12:53:24",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "PHPRouter": "src/"
+                "Routes": ""
             }
-        }
-    },
-    {
-        "name": "jarednova/timber",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jarednova/timber.git",
-            "reference": "c34e79f073b6b905f6fcaa9479977fc60ba5f17c"
         },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jarednova/timber/zipball/c34e79f073b6b905f6fcaa9479977fc60ba5f17c",
-            "reference": "c34e79f073b6b905f6fcaa9479977fc60ba5f17c",
-            "shasum": ""
-        },
-        "require": {
-            "asm89/twig-cache-extension": "~1.0",
-            "composer/installers": "~1.0",
-            "jarednova/php-router": "1.0.1",
-            "php": ">=5.3.0",
-            "twig/twig": "~1.15"
-        },
-        "require-dev": {
-            "advancedcustomfields/acf5-beta": "5.0",
-            "phpunit/phpunit": "~4.0",
-            "satooshi/php-coveralls": "dev-master",
-            "wp-cli/wp-cli": "*"
-        },
-        "time": "2015-02-21 21:36:29",
-        "type": "wordpress-plugin",
-        "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
@@ -268,6 +346,69 @@
                 "homepage": "http://upstatement.com"
             }
         ],
+        "description": "Manage rewrites and routes in WordPress with this dead-simple plugin",
+        "homepage": "http://routes.upstatement.com",
+        "keywords": [
+            "redirects",
+            "rewrite",
+            "routes",
+            "routing"
+        ]
+    },
+    {
+        "name": "timber/timber",
+        "version": "1.1.6",
+        "version_normalized": "1.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/timber/timber.git",
+            "reference": "7631b3dd3e37a100c6cbc23522b1f3630e907d58"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/timber/timber/zipball/7631b3dd3e37a100c6cbc23522b1f3630e907d58",
+            "reference": "7631b3dd3e37a100c6cbc23522b1f3630e907d58",
+            "shasum": ""
+        },
+        "require": {
+            "asm89/twig-cache-extension": "~1.0",
+            "composer/installers": "~1.0",
+            "php": ">=5.3.0",
+            "twig/twig": "1.*",
+            "upstatement/routes": "0.4"
+        },
+        "require-dev": {
+            "jarednova/markdowndocs": "dev-master",
+            "phpdocumentor/phpdocumentor": "2.*",
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "1.0.*",
+            "wpackagist-plugin/advanced-custom-fields": "4.*",
+            "wpackagist-plugin/co-authors-plus": "3.*"
+        },
+        "time": "2016-09-15 03:46:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Timber\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jared Novack",
+                "email": "jared@upstatement.com",
+                "homepage": "http://upstatement.com"
+            },
+            {
+                "name": "Connor J. Burton",
+                "email": "connorjburton@gmail.com",
+                "homepage": "http://connorburton.com"
+            }
+        ],
         "description": "Plugin to write WordPress themes w Object-Oriented Code and the Twig Template Engine",
         "homepage": "http://timber.upstatement.com",
         "keywords": [
@@ -275,6 +416,57 @@
             "themes",
             "timber",
             "twig"
+        ]
+    },
+    {
+        "name": "mindkomm/timmy",
+        "version": "0.10.1",
+        "version_normalized": "0.10.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MINDKomm/Timmy.git",
+            "reference": "fca77265c5ccdc96c925891cd4f423b6c0277a64"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/MINDKomm/Timmy/zipball/fca77265c5ccdc96c925891cd4f423b6c0277a64",
+            "reference": "fca77265c5ccdc96c925891cd4f423b6c0277a64",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "timber/timber": "~1.0"
+        },
+        "time": "2016-05-25 17:59:35",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Timmy\\": "lib/"
+            },
+            "files": [
+                "init.php",
+                "functions-images.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Lukas Gaechter",
+                "email": "lukas.gaechter@mind.ch",
+                "homepage": "http://www.mind.ch"
+            }
+        ],
+        "description": "Opt-in plugin for Timber Library to make it even more convenient to work with images.",
+        "keywords": [
+            "images",
+            "responsive",
+            "timber",
+            "timmy",
+            "wordpress"
         ]
     }
 ]

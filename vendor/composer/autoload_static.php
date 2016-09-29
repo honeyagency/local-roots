@@ -4,8 +4,40 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInited6bdd62bdda42fc416baa6b0cfcd111
+class ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f
 {
+    public static $files = array (
+        'b3a4daaf3c08948e4aed4bd942cc834d' => __DIR__ . '/..' . '/mindkomm/timmy/init.php',
+        '070724243fa0d98077edfb24ca62a2c3' => __DIR__ . '/..' . '/mindkomm/timmy/functions-images.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Timmy\\' => 6,
+            'Timber\\' => 7,
+        ),
+        'C' => 
+        array (
+            'Composer\\Installers\\' => 20,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Timmy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mindkomm/timmy/lib',
+        ),
+        'Timber\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/timber/timber/lib',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+        ),
+    );
+
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/..' . '/asm89/twig-cache-extension/lib',
     );
@@ -18,27 +50,27 @@ class ComposerStaticInited6bdd62bdda42fc416baa6b0cfcd111
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
-        'P' => 
+        'R' => 
         array (
-            'PHPRouter' => 
+            'Routes' => 
             array (
-                0 => __DIR__ . '/..' . '/jarednova/php-router/src',
+                0 => __DIR__ . '/..' . '/upstatement/routes',
             ),
         ),
-        'C' => 
-        array (
-            'Composer\\Installers\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/composer/installers/src',
-            ),
-        ),
+    );
+
+    public static $classMap = array (
+        'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInited6bdd62bdda42fc416baa6b0cfcd111::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInited6bdd62bdda42fc416baa6b0cfcd111::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitf775daed7bcf3ddcc111b8a44e7eaf2f::$classMap;
 
         }, null, ClassLoader::class);
     }

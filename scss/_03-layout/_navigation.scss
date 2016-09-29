@@ -1,1 +1,10 @@
-nav {}
+nav {
+    ul {
+        li {
+            &.nav-item {
+                list-style-type: none;
+                display: inline-block;
+            }
+        }
+    }
+}

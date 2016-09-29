@@ -1,0 +1,43 @@
+.font--thin {
+    font-weight: 100 !important;
+}
+
+.font--italic {
+    font-style: italic;
+}
+
+.font--normal {
+    font-style: normal !important;
+}
+
+.font--smaller {
+    font-size: 1rem;
+}
+
+.font--even-smaller {
+    font-size: .9rem;
+}
+
+.font--larger {
+    font-size: 1.5rem;
+}
+
+.text--center {
+    text-align: center !important;
+}
+
+.text--right {
+    text-align: right !important;
+}
+
+.text--uppercase {
+    text-transform: uppercase !important;
+}
+
+.text--lowercase {
+    text-transform: lowercase !important;
+}
+
+.text--capitalize {
+    text-transform: capitalize !important;
+}

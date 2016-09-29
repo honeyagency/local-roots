@@ -3,16 +3,14 @@
   '_07-vendors/neat/neat';
 
 @import
+  '_06-utils/color-palette',
   '_06-utils/variables',
-  '_06-utils/mixins',
-  '_06-utils/color-palette';
+  '_06-utils/mixins';
 
 @import
   '_01-base/reset',
   '_01-base/typography',
   '_01-base/base';
-
-@import '_03-layout/to-delete';
 
 @import
   '_03-layout/navigation',
@@ -21,7 +19,10 @@
   '_03-layout/forms';
 
 @import
+  '_02-components/bg-color',
   '_02-components/buttons',
+  '_02-components/color',
+  '_02-components/font-utils',
   '_02-components/icons',
   '_02-components/spacing';
 

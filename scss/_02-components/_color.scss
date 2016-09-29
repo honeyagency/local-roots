@@ -1,0 +1,19 @@
+.color--blue {
+  color: map-get($blue, main);
+}
+
+.color--green {
+  color: map-get($green, main);
+}
+
+.color--yellow {
+  color: map-get($yellow, main);
+}
+
+.color--black {
+  color: black;
+}
+
+.color--white {
+  color: white;
+}

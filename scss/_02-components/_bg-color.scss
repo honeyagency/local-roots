@@ -1,0 +1,12 @@
+.bg--blue{
+	background-color: map-get($blue, main);
+}
+.bg--green{
+	background-color: map-get($green, main);
+}
+.bg--yellow{
+	background-color: map-get($yellow, main);
+}
+
+.bg--black{}
+.bg--white{}

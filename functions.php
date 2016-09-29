@@ -1,4 +1,9 @@
 <?php
+
+require_once( __DIR__ . '/vendor/autoload.php' );
+
+set_post_thumbnail_size(0, 0);
+
 if (!class_exists('Timber')) {
     add_action('admin_notices', function () {
         echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
@@ -35,7 +40,7 @@ class StarterSite extends TimberSite
     function add_to_context($context) {
         $context['menu'] = new TimberMenu();
         $context['site'] = $this;
-        $context['assets'] = get_template_directory_uri() . '/assets';
+        $context['assets'] = get_template_directory_uri() . '/app';
         return $context;
     }
     
@@ -55,3 +60,4 @@ require_once ('library/admin.php');
 
 require_once ('library/buscemi.php');
  // lots of extra theme stuff
+

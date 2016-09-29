@@ -7,6 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'PHPRouter' => array($vendorDir . '/jarednova/php-router/src'),
-    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src'),
+    'Routes' => array($vendorDir . '/upstatement/routes'),
 );
