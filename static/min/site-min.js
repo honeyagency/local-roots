@@ -1,1 +1,0 @@
-jQuery(document).ready(function($){$(".trigger--menu").on("click touchstart",function(e){e.preventDefault(),$("body").toggleClass("open")})});
