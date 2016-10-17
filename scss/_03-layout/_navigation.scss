@@ -1,4 +1,6 @@
 nav {
+    z-index: 9;
+
     @include media($screen-sm) {
         margin-top: .8em;
     }
@@ -23,6 +25,7 @@ nav {
     }
 
     @include media($max-sm) {
+        height: 100%;
         position: fixed;
         top: 63px;
         left: 0;
@@ -33,6 +36,7 @@ nav {
 
         ul {
             li {
+                transition: transform 0.7s cubic-bezier(0.4, 0.01, 0.165, 0.99);
                 display: block !important;
                 width: 75%;
                 margin: 1em auto;
@@ -42,6 +46,24 @@ nav {
                 background: white;
 
                 a {}
+
+                // transition-delay: .2s;
+
+                &:nth-of-type(1) {
+                    transform: translateX(1em);
+                }
+
+                &:nth-of-type(2) {
+                    transform: translateX(2em);
+                }
+
+                &:nth-of-type(3) {
+                    transform: translateX(3em);
+                }
+
+                &:nth-of-type(4) {
+                    transform: translateX(4em);
+                }
             }
         }
     }
@@ -51,12 +73,16 @@ nav {
 body {
     @include media($max-sm) {
         &.open {
+            position: fixed;
+
             nav {
                 transform: translateX(0);
                 transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
                 ul {
                     li {
+                        transform: translateX(0);
+
                         a {}
                     }
                 }
