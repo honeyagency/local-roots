@@ -1,0 +1,28 @@
+.section--social {
+        height: 30px;
+    a {
+        height: .8em;
+
+        i {
+            svg {
+                width: 1.2em;
+                height: 1.2em;
+            }
+        }
+    }
+
+    .icon-phone, .icon-search {
+        height: .8em;
+        width: .8em;
+
+        svg {
+            height: .8em;
+            width: .8em;
+        }
+    }
+}
+
+.borderSpan {
+    border-right: 2px solid;
+    margin-right: 1em;
+}

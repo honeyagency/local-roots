@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}} spacing--dsk-vert-" id="post-{{post.ID}}">
+		<section class="flex flex-wrap align--center section--content-row">
+			<div class="grid--one flex flex--column justify--center grid--md-half nog bg--image cover spacing--vert-3 border--vert-thick" style="background-image:url('http://placekitten.com/g/1000/1000')">
+				<h2 class="color--yellow text--center border">Food Tours</h2>
+			</div>
+			<div class="grid--one flex flex--column justify--center grid--md-half nog bg--white spacing--gutter spacing--vert-1 spacing--dsk-horiz-5">
+					Tantalize your taste buds on 3.5 hour guided walking trours through Sacramento's historic (and delicious!) tree-lined streets.<br><a href="">view tours ></a>
+			</div>
+		</section>
+		<section class="flex flex-wrap align--center section--content-row">
+			<div class="grid--one flex flex--column justify--center grid--sm-half nog bg--blue text--center spacing--horiz-6">
+				<h2>&quot;Eat Well &amp; Travel Often&quot;</h2>
+				<hr class="small" />
+				Anonymous
+			</div>
+			<div class="grid--one flex flex--column justify--center grid--sm-half nog bg--image cover" style="background-image:url('http://placekitten.com/g/1000/1000')">
+			</div>
+		</section>
+
+	</article>
+{% endblock %}

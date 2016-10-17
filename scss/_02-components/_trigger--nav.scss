@@ -1,0 +1,50 @@
+.trigger--nav {
+    width: 25px;
+    height: 20px;
+    top: 5px;
+    display: block;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    * {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    // float: right;
+    position: relative;
+
+    span {
+        display: block;
+        width: 25px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), width 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+        &:first-of-type {}
+
+        &:last-of-type {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        height: 0px;
+        width: 25px;
+        transition: width 0.16s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        margin: 0;
+        display: block;
+        top: 50%;
+
+        // left: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+}

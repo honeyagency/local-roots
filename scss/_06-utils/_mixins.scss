@@ -5,3 +5,22 @@
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
 }
+
+
+$loops : 0;
+@function approximateSq($num, $approx) {
+  $root : (( $num / $approx ) + $approx) / 2;
+  @return $root;
+}
+
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+ 
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+ 
+  @return $x1;
+}

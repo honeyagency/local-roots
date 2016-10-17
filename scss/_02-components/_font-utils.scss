@@ -2,6 +2,10 @@
     font-weight: 100 !important;
 }
 
+.font--semi-bold {
+    font-weight: 500 !important;
+}
+
 .font--italic {
     font-style: italic;
 }
@@ -19,7 +23,17 @@
 }
 
 .font--larger {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.font--headline {
+    @include media($screen-sm) {
+        font-size: 2rem;
+    }
+}
+
+.letter--1 {
+    letter-spacing: 1px;
 }
 
 .text--center {
@@ -40,4 +54,14 @@
 
 .text--capitalize {
     text-transform: capitalize !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &.border {
+        border: 9px solid;
+        display: table;
+        margin: 0 auto;
+        line-height: 1;
+        padding: 5px 0.3em 0 0.3em;
+    }
 }

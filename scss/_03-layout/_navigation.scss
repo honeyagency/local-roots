@@ -1,4 +1,9 @@
 nav {
+    @include media($screen-sm) {
+        margin-top: .8em;
+    }
+
+
     ul {
         li {
             &.nav-item {
@@ -6,7 +11,79 @@ nav {
                 display: inline;
 
                 &:last-of-type {
-                    padding: 4px 6px 2px 6px;
+                    padding: 6px 10px 4px;
+
+                    a {
+                        font-weight: 600;
+                        font-size: .9em;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media($max-sm) {
+        position: fixed;
+        top: 63px;
+        left: 0;
+        right: 0;
+        transform: translateX(100vw);
+        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        background-color: map-get($yellow, main);
+
+        ul {
+            li {
+                display: block !important;
+                width: 75%;
+                margin: 1em auto;
+                border: 5px solid;
+                text-align: center;
+                padding: 4px 0;
+                background: white;
+
+                a {}
+            }
+        }
+    }
+}
+
+// When the nav gets opened up on mobile
+body {
+    @include media($max-sm) {
+        &.open {
+            nav {
+                transform: translateX(0);
+                transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+                ul {
+                    li {
+                        a {}
+                    }
+                }
+            }
+
+            .trigger--nav {
+                // border:1px solid;
+                // background: red;
+
+                span {
+                    transform-origin: center;
+                    width: 30px;
+
+                    &:first-of-type {
+                        transform: translateY(9px) translateX(-2.5px) rotate(45deg);
+                    }
+
+                    &:last-of-type {
+                        transform: translateY(-9px) translateX(-2.5px) rotate(-45deg);
+                    }
+
+                    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), width 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                }
+
+                hr {
+                    width: 0px;
+                    transition: width 0.16s cubic-bezier(0.4, 0.01, 0.165, 0.99);
                 }
             }
         }

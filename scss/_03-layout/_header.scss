@@ -1,11 +1,34 @@
 .hdr-logo-link {
+    display: inline;
+
     i {
+        display: inline;
+
         svg {
+            display: block;
             width: 250px;
+            height: auto;
+        }
+    }
+
+    @include media($max-sm) {
+        i {
+            svg {
+                height: 32px;
+                width: 140px;
+            }
+        }
+    }
+
+
+    .icon-logo {
+        svg {
+            margin-top: 10px;
+            margin-bottom: -20px;
+            width: 200px;
+            transform: rotate(-10deg);
         }
     }
 }
 
-header {
-
-}
+header {}

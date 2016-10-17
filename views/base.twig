@@ -5,20 +5,37 @@
 </head>
 {% endblock %}
 <body class="{{body_class}}" data-template="base.twig">
-	{% block header %}<header class="header bg--yellow flex flex--wrap justify--between spacing--gutter spacing--vert-1">
-
+{% block header %}
+	<header class="header bg--yellow flex flex-wrap justify--between spacing--gutter spacing--vert-1 font--semi-bold">
 		<a class="hdr-logo-link" href="/" rel="home">
-		<i class="icon-logo-horiz" data-grunticon-embed></i>
+		{% if post.post_name == 'home'  %}
+			<i class="icon-logo mobile--hide" data-grunticon-embed></i>
+		{% else %}
+			<i class="icon-logo-horiz" data-grunticon-embed></i>
+		{% endif %}
+		<i class="dsk--hide icon-logo-horiz" data-grunticon-embed></i>
 		</a>
-		{% include 'components/navigation.twig' %}
+		<div class="flex flex-wrap align--end flex--column">
+			{% include 'components/sections/section--social.twig' %}
+			{% include 'components/navigation.twig' %}
+		</div>
+		<label class="trigger--nav dsk--hide">
+			<span></span>
+			<hr>
+			<span></span>
+		</label>
+		<div class="grid--one spacing--dsk-vert-5 spacing--vert-2 spacing--gutter flex justify--center">
+			<div class="grid--md-two-thirds font--headline text--center">
+				Explore Nothern California's best restaurants with us, along with the chefs, architecture and history that make the region an amazing culinary destination.
+			</div>
+		</div>
 	{% endblock %}
 </header>
 <main role="main" class="content-wrapper">
-	{% if title %}<h1>{{title}}</h1>{% endif %}
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-
+{% if title %}<h1>{{title}}</h1>{% endif %}
+{% block content %}
+	Sorry, no content
+{% endblock %}
 </main>
 {% block footer %}
 	<footer>

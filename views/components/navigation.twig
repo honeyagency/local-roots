@@ -1,5 +1,5 @@
-<nav role="navigation">
-	<ul>
+<nav role="navigation" class="font--larger letter--1">
+	<ul class="nomar">
 		{% for item in menu.get_items %}
 			<li class="nav-item text--uppercase  {{item.classes | join(' ')}}">
 				<a class="nav-link color--black" href="{{item.get_link}}">{{item.title}}</a>

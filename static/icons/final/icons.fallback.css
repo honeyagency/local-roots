@@ -2,6 +2,10 @@
 
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
 
+.icon-phone { background-image: url('app/icons/phone.png'); background-repeat: no-repeat; }
+
+.icon-search { background-image: url('app/icons/search.png'); background-repeat: no-repeat; }
+
 .icon-social--facebook { background-image: url('app/icons/social--facebook.png'); background-repeat: no-repeat; }
 
 .icon-social--instagram { background-image: url('app/icons/social--instagram.png'); background-repeat: no-repeat; }

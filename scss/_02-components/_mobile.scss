@@ -1,0 +1,10 @@
+.mobile--hide {
+    @include media($max-sm) {
+        display: none !important;
+    }
+}
+.dsk--hide {
+    @include media($screen-sm) {
+        display: none !important;
+    }
+}

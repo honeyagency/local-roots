@@ -21,14 +21,15 @@ function add_ie_html5_shim()
 }
 add_action('wp_head', 'add_ie_html5_shim');
 
-function get_image_sizes() {
+function get_image_sizes()
+{
     return array(
-        'custom-4' => array(
-            'resize' => array( 370 ),
-            'srcset' => array( 2 ),
-            'sizes' => '(min-width: 992px) 33.333vw, 100vw',
-            'name' => 'Width 1/4 fix',
-            'post_types' => array( 'post', 'page' ),
+        'header' => array(
+            'resize'     => array(1300),
+            'srcset'     => array(3),
+            'sizes'      => '100vw',
+            'name'       => 'Width 1/4 fix',
+            'post_types' => array('post', 'page'),
         ),
     );
 }
