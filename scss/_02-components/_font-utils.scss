@@ -58,6 +58,7 @@
 
 h1, h2, h3, h4, h5, h6 {
     &.border {
+        z-index: 1;
         border: 9px solid;
         display: table;
         margin: 0 auto;
