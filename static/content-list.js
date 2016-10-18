@@ -15,17 +15,19 @@ jQuery(document).ready(function($) {
         if ($item.jquery) {
             $id = $item.attr('id');
             if ($item.hasClass('current')) {} else {
-                $('.current').removeClass('current');
-                // $('.content-section .current').removeClass('current');
-                $item.toggleClass('current');
                 $content = $('article').find("[data-content='" + $id + "']");
+
+                $('.content-section.current').removeClass('current');
+                $('.content-toggle.current').removeClass('current');
+                
+                $item.toggleClass('current');
                 $content.toggleClass('current');
             }
         } else {
             $id = $item;
-            $('.current').removeClass('current');
-            // $('.content-section .current').removeClass('current');
-            // $item.toggleClass('current');
+            $('.content-section.current').removeClass('current');
+            // $('.content-toggle .current').removeClass('current');
+            // $itemtoggleClass.('current');
             $content = $('article').find("[data-content='" + $id + "']");
             $content.toggleClass('current');
         }

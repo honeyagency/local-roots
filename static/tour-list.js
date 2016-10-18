@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
     function changetour(value) {
         $item = value;
         $id = $item;
-        $('.current').removeClass('current');
+        $('.tours.current').removeClass('current');
         $tour = $('main').find("[data-tour='" + $id + "']");
         $tour.addClass('current');
     }

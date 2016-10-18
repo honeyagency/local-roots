@@ -1,7 +1,7 @@
 <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 	<ul class=" spacing-dsk-vert-1 list--no content-list mobile--hide">
 		{% for content in content.content %}
-			<a class="border--4 nomar {% if loop.first %}current{% endif %} color--blue font--semi-bold spacing--horiz-1 text--uppercase letter--1" href="javascript:void(0);" id="contentIndex-{{loop.index}}">{{content.title}}</a>&nbsp;&nbsp;
+			<a class="border--4 nomar content-toggle {% if loop.first %}current{% endif %} color--blue font--semi-bold spacing--horiz-1 text--uppercase letter--1" href="javascript:void(0);" id="contentIndex-{{loop.index}}">{{content.title}}</a>&nbsp;&nbsp;
 		{% endfor %}
 		{% if content.gift %}<a href="{{content.gift}}" class="text--uppercase font--semi-bold gift letter--1">Gift a tour ></a>{% endif %}
 	</ul>
