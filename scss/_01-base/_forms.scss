@@ -121,6 +121,13 @@ textarea {
 select {
     margin-bottom: $small-spacing;
     width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.3em 0.3em 0.2em 0.3em;
+    border: 5px solid;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 [type="submit"] {

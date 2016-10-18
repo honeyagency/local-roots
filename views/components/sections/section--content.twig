@@ -1,9 +1,16 @@
-<article class="post-type-{{post.post_type}} spacing--dsk-vert-3" id="post-{{post.ID}}">
-	<ul class="spacing--gutter spacing-dsk-vert-1 list--no flex flex-wrap content-list">
+<article class="post-type-{{post.post_type}} spacing--vert-1 spacing--dsk-vert-3" id="post-{{post.ID}}">
+	<ul class="spacing--gutter spacing-dsk-vert-1 list--no flex flex-wrap content-list mobile--hide">
 		{% for content in content.content %}
 			<a class="border--4 nomar {% if loop.first %}current{% endif %} color--blue font--semi-bold spacing--horiz-1 text--uppercase letter--1" href="javascript:void(0);" id="contentIndex-{{loop.index}}">{{content.title}}</a>&nbsp;&nbsp;
 		{% endfor %}
 	</ul>
+	<section class="spacing--gutter dsk--hide">
+	<select name="contentSelect" class="contentSelect">
+		{% for content in content.content %}
+			<option value="contentIndex-{{loop.index}}">{{content.title}}</option>
+		{% endfor %}
+	</select>
+</section>
 	{% for content in content.content %}
 		<section class="spacing--gutter spacing--dsk-vert-1 content-section {% if loop.first %}current{% endif %}" data-content="contentIndex-{{loop.index}}">{{content.content}}</section>
 	{% endfor %}
