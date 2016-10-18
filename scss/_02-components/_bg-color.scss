@@ -22,6 +22,7 @@
 }
 
 .bg--image {
+    position: relative;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -34,8 +35,6 @@
     }
 
     &.overlay {
-        position: relative;
-
         &:before {
             content: ' ';
             position: absolute;
@@ -48,3 +47,7 @@
         }
     }
 }
+
+.bg--transparent {
+    background-color: transparent;
+} 

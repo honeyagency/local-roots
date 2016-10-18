@@ -1,0 +1,33 @@
+.tab--insta {
+    position: absolute;
+    height: 60px;
+    width: 170px;
+    left: -20px;
+    top: 2em;
+    padding-left: 20px;
+
+    i {
+        height: 35px;
+        width: 35px;
+        top: 50%;
+        display: block;
+        position: relative;
+        transform: translateY(-50%);
+
+        svg {
+            height: 35px;
+            width: 35px;
+
+            path {}
+        }
+    }
+    &:after{
+    	background-color: map-get($yellow, dark);
+    	content: '';
+    	display: block;
+    	left:0;
+    	top: 100%;
+    	position: absolute;
+    	height: 10px;
+    }
+}

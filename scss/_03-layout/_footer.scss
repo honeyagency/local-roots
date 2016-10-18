@@ -1,1 +1,39 @@
-footer{}
+footer {
+    position: relative;
+
+    .icon-logo {
+        position: absolute;
+        left: -5px;
+        top: -35px;
+        width: 240px;
+        height: 240px;
+        transform: rotate(-10deg);
+
+        svg {
+            path {
+                &:first-of-type {
+                    fill: transparent;
+                }
+            }
+        }
+    }
+
+    .icon-phone, .icon-email {
+        svg {
+            width: .8em;
+        }
+    }
+
+    .social {
+        i {
+            svg {
+                height: 1.5em;
+                width: 1.5em;
+            }
+        }
+    }
+
+    .button {
+        padding: 6px 10px 4px;
+    }
+}

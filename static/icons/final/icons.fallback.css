@@ -1,3 +1,5 @@
+.icon-email { background-image: url('app/icons/email.png'); background-repeat: no-repeat; }
+
 .icon-logo-horiz { background-image: url('app/icons/logo-horiz.png'); background-repeat: no-repeat; }
 
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
@@ -7,6 +9,8 @@
 .icon-search { background-image: url('app/icons/search.png'); background-repeat: no-repeat; }
 
 .icon-social--facebook { background-image: url('app/icons/social--facebook.png'); background-repeat: no-repeat; }
+
+.icon-social--instagram-nob { background-image: url('app/icons/social--instagram-nob.png'); background-repeat: no-repeat; }
 
 .icon-social--instagram { background-image: url('app/icons/social--instagram.png'); background-repeat: no-repeat; }
 

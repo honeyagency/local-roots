@@ -9,6 +9,8 @@ function getSiteOptions()
         'instagram' => get_field('field_57ee9d51cf69c', 'option'),
         'pinterest' => get_field('field_57ee9da466cf3', 'option'),
         'linkedin'  => get_field('field_57ee9dd166cf4', 'option'),
+        'email'     => get_field('field_58058e1e3c56d', 'option'),
+
     );
     $section = array(
         'social' => $social,
@@ -17,7 +19,7 @@ function getSiteOptions()
 }
 function getHeaderFields()
 {
-    // $imageId = 
+    // $imageId =
     $section = array(
         'image' => get_field('field_57eeae178cf5d'),
     );
