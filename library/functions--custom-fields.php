@@ -50,6 +50,7 @@ function getFoodTours()
             $imageId = get_sub_field('field_5805b6e0d65fa');
             $image   = new TimberImage($imageId);
             if (have_rows('field_5805b9783a2d1')) {
+                $content = array();
                 while (have_rows('field_5805b9783a2d1')) {
                     the_row();
                     $content[] = array(

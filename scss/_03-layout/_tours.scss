@@ -1,0 +1,7 @@
+.tours {
+    display: none;
+
+    &:first-of-type {
+        display: block;
+    }
+}

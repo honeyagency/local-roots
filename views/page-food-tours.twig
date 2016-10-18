@@ -1,24 +1,34 @@
 {% extends "base.twig" %}
 {% block content %}
 	{# {{tours|print_r}} #}
+	<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
+	<select name="tourSelect" class="tourSelect grid--fourth">
+		<option value="">Choose Your Tour <i class="icon-arrow-down" data-grunticon-embed></i></option>}
+			{% for tour in tours %}
+				<option value="tourIndes-{{loop.index}}">{{tour.title}}</option>
+			{% endfor %}
+		</select>
+	</section>
 	{% for tour in tours %}
-		<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
-			<h2>{{tour.title}}</h2>
-			<p class="font--headline font--semi-bold">{{tour.subtitle}}</p>
-			<div class="">{{tour.paragraph}}</div>
-		</section>
-		<section class="flex flex-wrap">
-			<div class="grid--one grid--sm-half nog bg--image spacing--vert-4 spacing--dsk-vert-5" style="background-image:url('{{tour.image}}')"></div>
-			<div class="grid--one grid--sm-half nog bg--blue color--yellow text--center spacing--vert-2 spacing--dsk-vert-5">
+		<article class="tours tour-{{loop.index}}">
+			<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
 				<h2>{{tour.title}}</h2>
-				<hr class="small">
-				<p class="font--headline">{{tour.price}}</p>
-				{% if tour.link %}<a class="button color--yellow" href="{{tour.link}}"><h2 class="border">Book Now ></h2></a>{% endif %}
-			</div>
-		</section>
-		<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
-		{% set content = tour %}
-		{% include 'components/sections/section--content.twig' %}
-		</section>
+				<p class="font--headline font--semi-bold">{{tour.subtitle}}</p>
+				<div class="">{{tour.paragraph}}</div>
+			</section>
+			<section class="flex flex-wrap">
+				<div class="grid--one grid--sm-half nog bg--image spacing--vert-4 spacing--dsk-vert-5" style="background-image:url('{{tour.image}}')"></div>
+				<div class="block--pricing grid--one grid--sm-half nog bg--blue color--yellow text--center spacing--vert-2 spacing--dsk-vert-5">
+					<h2>{{tour.title}}</h2>
+					<hr class="small">
+					<div class="font--headline">{{tour.price}}</div>
+					{% if tour.link %}<a class="button color--yellow" href="{{tour.link}}"><h2 class="border">Book Now ></h2></a>{% endif %}
+				</div>
+			</section>
+			<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
+				{% set content = tour %}
+				{% include 'components/sections/section--content.twig' %}
+			</section>
+		</article>
 	{% endfor %}
 {% endblock %}
