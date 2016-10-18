@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $('.content-list > a').on('click touchstart', function(event) {
+    $('.content-toggle').on('click touchstart', function(event) {
         event.preventDefault();
         $item = $(this);
         changeContent($item);
@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
         $item = $(this).val();
         changeContent($item);
     });
+
 
     function changeContent(value) {
         $item = value;

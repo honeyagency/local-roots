@@ -26,6 +26,7 @@ $post               = new TimberPost();
 $context['content'] = getContentSections();
 $context['post']    = $post;
 $context['header']  = getHeaderFields();
+
 if (is_page(9)) {
     $context['tours'] = getFoodTours();
     if (!empty($_GET['tour'])) {
@@ -33,6 +34,10 @@ if (is_page(9)) {
     }
 } elseif (is_page(13)) {
     $context['blocks'] = getTourBlocks();
+} else {
+    if (!empty($_GET['tab'])) {
+        $context['current'] = $_GET['tab'];
+    }
 }
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

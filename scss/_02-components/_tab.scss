@@ -13,6 +13,7 @@
         display: block;
         position: relative;
         transform: translateY(-50%);
+        float: left;
 
         svg {
             height: 35px;
@@ -21,13 +22,26 @@
             path {}
         }
     }
-    &:after{
-    	background-color: map-get($yellow, dark);
-    	content: '';
-    	display: block;
-    	left:0;
-    	top: 100%;
-    	position: absolute;
-    	height: 10px;
+
+    &:after {
+        background-color: map-get($yellow, dark);
+        content: '';
+        display: block;
+        left: 0;
+        top: 100%;
+        position: absolute;
+        height: 10px;
+    }
+
+    .text {
+        display: block;
+        float: left;
+        line-height: 0.8;
+        top: 53%;
+        position: relative;
+        transform: translateY(-50%);
+        margin-left: 5px;
+        font-weight: 500;
+        text-transform: uppercase;
     }
 }
