@@ -1,0 +1,17 @@
+.content-list {
+    a {
+        color: $gray !important;
+
+        &.current {
+            color: map-get($blue, main) !important;
+        }
+    }
+}
+
+.content-section {
+    display: none;
+
+    &.current {
+        display: block;
+    }
+}

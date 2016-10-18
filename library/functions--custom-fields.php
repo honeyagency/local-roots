@@ -25,3 +25,20 @@ function getHeaderFields()
     );
     return $section;
 }
+function getContentSections()
+{
+
+    if (have_rows('field_58059a077e48e')) {
+        while (have_rows('field_58059a077e48e')) {
+            the_row();
+            $content[] = array(
+                'title'   => get_sub_field('field_58059a3b7e490'),
+                'content' => get_sub_field('field_58059a447e491'),
+            );
+        }
+    }
+    $section = array(
+        'content' => $content,
+    );
+    return $section;
+}
