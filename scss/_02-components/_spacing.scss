@@ -30,6 +30,7 @@
 .spacing--dsk-horiz-6 {@include media( $screen-sm ){padding-left:(6 * 2rem);padding-right:(6 * 2rem);};}
 
 
+
 .spacing--lg-vert-1 {@include media( $screen-md ){padding-top:(1 * $h6);padding-bottom:(1 * $h6);};}
 .spacing--lg-vert-2 {@include media( $screen-md ){padding-top:(2 * $h5);padding-bottom:(2 * $h5);};}
 .spacing--lg-vert-3 {@include media( $screen-md ){padding-top:(3 * $h4);padding-bottom:(3 * $h4);};}
@@ -61,3 +62,6 @@
 	}
 	
 }
+.spacing--dsk-horiz-0 {@include media( $screen-sm ){padding-left:(0);padding-right:(0);};}
+.spacing--dsk-vert-0 {@include media( $screen-sm ){padding-top:(0);padding-bottom:(0);};}
+ 

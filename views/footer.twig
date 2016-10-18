@@ -1,5 +1,5 @@
 <section class="flex flex-wrap justify--center spacing--dsk-vert-5">
-	<div class="grid--third">
+	<div class="grid--one grid--sm-third spacing--gutter spacing--dsk-horiz-0 spacing--vert-1 spacing--dsk-vert-0">
 		<h6>Contact</h6>
 		<a href="{{options.social.phone}}" class="color--black font--larger"><i class="icon-phone" data-grunticon-embed></i> {{options.social.phone}}</a><br>
 		<a href="{{options.social.email}}" class="color--black font--larger"><i class="icon-email" data-grunticon-embed></i> {{options.social.email}}</a>
@@ -12,13 +12,13 @@
 		</p>
 		<a class="border button color--black font--semi-bold letter--1 text--uppercase border--4" href="">Book A Tour</a>
 	</div>
-	<div class="grid--half">
+	<div class="grid--one grid--sm-half spacing--gutter spacing--dsk-horiz-0 spacing--vert-1 spacing--dsk-vert-0">
 		<h2>Email Signup</h2>
 		<p>Stay up to date with the latest tour news!</p>
 		{% include 'components/email-form.twig' %}
 	</div>
 </section>
-<section class="grid--one text--center text--uppercase font--smaller font--semi-bold letter--1 spacing--dsk-vert-2">
+<section class="grid--one text--center text--uppercase font--smaller font--semi-bold letter--1 spacing--dsk-vert-2 spacing--gutter">
 	<div class="color--green">
 		Copyright {{"now"|date('Y')}} &copy; {{site.title}} All Rights Reserved
 	</div>

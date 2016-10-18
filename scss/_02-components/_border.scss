@@ -21,6 +21,11 @@
         &:nth-of-type(even) {
             border-right: 0;
         }
+
+        @include media($max-sm) {
+            border-left: 0;
+            border-right: 0;
+        }
     }
 }
 

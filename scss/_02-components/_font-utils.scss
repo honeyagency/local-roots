@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
         border: 5px solid;
         padding: 7px 0.5em 3px 0.5em;
         position: relative;
+
         @include media($screen-sm) {
             border: 9px solid;
             padding: 5px 0.3em 0 0.3em;
@@ -81,11 +82,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .init-large-p {
-    p {
-        &:first-of-type {
-            font-size: 1.7rem;
-            font-weight: 500;
-            margin-top: .7em;
+    @include media($screen-sm) {
+        p {
+            &:first-of-type {
+                font-size: 1.7rem;
+                font-weight: 500;
+                margin-top: .7em;
+            }
         }
     }
 }

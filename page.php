@@ -28,6 +28,9 @@ $context['post']    = $post;
 $context['header']  = getHeaderFields();
 if (is_page(9)) {
     $context['tours'] = getFoodTours();
+    if (!empty($_GET['tour'])) {
+        $context['current'] = $_GET['tour'];
+    }
 } elseif (is_page(13)) {
     $context['blocks'] = getTourBlocks();
 }

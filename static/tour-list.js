@@ -8,8 +8,10 @@ jQuery(document).ready(function($) {
     function changetour(value) {
         $item = value;
         $id = $item;
-        $('.tours.current').removeClass('current');
-        $tour = $('main').find("[data-tour='" + $id + "']");
-        $tour.addClass('current');
+        if ($id == 'choose') {} else {
+            $('.tours.current').removeClass('current');
+            $tour = $('main').find("[data-tour='" + $id + "']");
+            $tour.addClass('current');
+        }
     }
 });
