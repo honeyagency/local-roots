@@ -6,7 +6,7 @@
 		{% if content.gift %}<a href="{{content.gift}}" class="text--uppercase font--semi-bold gift letter--1">Gift a tour ></a>{% endif %}
 	</ul>
 	<section class="dsk--hide">
-		<select name="contentSelect" class="contentSelect">
+		<select name="contentSelect" class="contentSelect icon-arrow-down">
 			{% for content in content.content %}
 				<option value="contentIndex-{{loop.index}}">{{content.title}}</option>
 			{% endfor %}
