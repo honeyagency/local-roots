@@ -1,17 +1,17 @@
 {% extends "base.twig" %}
 {% block content %}
 	{# {{tours|print_r}} #}
-	<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
-	<select name="tourSelect" class="tourSelect grid--fourth">
-		<option value="">Choose Your Tour <i class="icon-arrow-down" data-grunticon-embed></i></option>}
+	<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2">
+	<select name="tourSelect" class="tourSelect grid--fourth icon-arrow-down">
+		<option value="">Choose Your Tour</option>
 			{% for tour in tours %}
-				<option value="tourIndes-{{loop.index}}">{{tour.title}}</option>
+				<option value="tourIndex-{{loop.index}}">{{tour.title}}</option>
 			{% endfor %}
 		</select>
 	</section>
 	{% for tour in tours %}
-		<article class="tours tour-{{loop.index}}">
-			<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
+		<article class="{% if loop.first %}current{% endif %} tours tour-{{loop.index}}" data-tour="tourIndex-{{loop.index}}">
+			<section class="spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2">
 				<h2>{{tour.title}}</h2>
 				<p class="font--headline font--semi-bold">{{tour.subtitle}}</p>
 				<div class="">{{tour.paragraph}}</div>
