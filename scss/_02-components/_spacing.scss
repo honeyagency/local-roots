@@ -29,6 +29,24 @@
 .spacing--dsk-horiz-5 {@include media( $screen-sm ){padding-left:(5 * $h2);padding-right:(5 * $h2);};}
 .spacing--dsk-horiz-6 {@include media( $screen-sm ){padding-left:(6 * 2rem);padding-right:(6 * 2rem);};}
 
+
+.spacing--lg-vert-1 {@include media( $screen-md ){padding-top:(1 * $h6);padding-bottom:(1 * $h6);};}
+.spacing--lg-vert-2 {@include media( $screen-md ){padding-top:(2 * $h5);padding-bottom:(2 * $h5);};}
+.spacing--lg-vert-3 {@include media( $screen-md ){padding-top:(3 * $h4);padding-bottom:(3 * $h4);};}
+.spacing--lg-vert-4 {@include media( $screen-md ){padding-top:(4 * $h3);padding-bottom:(4 * $h3);};}
+.spacing--lg-vert-5 {@include media( $screen-md ){padding-top:(5 * $h2);padding-bottom:(5 * $h2);};}
+.spacing--lg-vert-6 {@include media( $screen-md ){padding-top:(6 * 2rem);padding-bottom:(6 * 2rem);};}
+
+
+.spacing--lg-horiz-1 {@include media( $screen-md ){padding-left:(1 * $h6);padding-right:(1 * $h6);};}
+.spacing--lg-horiz-2 {@include media( $screen-md ){padding-left:(2 * $h5);padding-right:(2 * $h5);};}
+.spacing--lg-horiz-3 {@include media( $screen-md ){padding-left:(3 * $h4);padding-right:(3 * $h4);};}
+.spacing--lg-horiz-4 {@include media( $screen-md ){padding-left:(4 * $h3);padding-right:(4 * $h3);};}
+.spacing--lg-horiz-5 {@include media( $screen-md ){padding-left:(5 * $h2);padding-right:(5 * $h2);};}
+.spacing--lg-horiz-6 {@include media( $screen-md ){padding-left:(6 * 2rem);padding-right:(6 * 2rem);};}
+
+
+
 .spacing--bot-6{
 	padding-bottom: 6em;
 }

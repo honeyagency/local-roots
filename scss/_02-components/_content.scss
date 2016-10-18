@@ -1,9 +1,21 @@
 .content-list {
     a {
         color: $gray !important;
+        padding: 0.4em 0.7em;
+        font-size: 1.2rem;
+        letter-spacing: 1.4px;
+        border: 6px solid;
 
         &.current {
             color: map-get($blue, main) !important;
+        }
+
+        &.gift {
+            padding: 0;
+            margin-top: 2px;
+            border: none;
+            color: map-get($blue, main) !important;
+            float: right;
         }
     }
 }

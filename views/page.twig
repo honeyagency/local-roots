@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<section><img{{header.image|get_timber_image_responsive('header')}}></section>
 		<article class="post-type-{{post.post_type}} max-wrap spacing--dsk-vert-4" id="post-{{post.ID}}">
 			<section class="article-content">
 				<h1 class="article-h1">{{post.title}}</h1>

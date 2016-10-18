@@ -1,23 +1,23 @@
 .color--blue {
-    color: map-get($blue, main);
+    color: map-get($blue, main) !important;
 }
 
 .color--green {
-    color: map-get($green, main);
+    color: map-get($green, main) !important;
 }
 
 .color--yellow {
-    color: map-get($yellow, main);
+    color: map-get($yellow, main) !important;
 }
 
 .color--black {
-    color: black;
+    color: black !important;
 }
 
 .color--white {
-    color: white;
+    color: white !important;
 }
 
 .color--gray {
-    color: $gray;
+    color: $gray !important;
 }

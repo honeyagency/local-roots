@@ -42,3 +42,37 @@ function getContentSections()
     );
     return $section;
 }
+function getFoodTours()
+{
+    if (have_rows('field_5805b688d65f6')) {
+        while (have_rows('field_5805b688d65f6')) {
+            the_row();
+            $imageId = get_sub_field('field_5805b6e0d65fa');
+            $image   = new TimberImage($imageId);
+            if (have_rows('field_5805b9783a2d1')) {
+                while (have_rows('field_5805b9783a2d1')) {
+                    the_row();
+                    $content[] = array(
+                        'title'   => get_sub_field('field_5805b9883a2d2'),
+                        'content' => get_sub_field('field_5805b9953a2d3'),
+                    );
+                }
+            }
+            $section[] = array(
+                'title'     => get_sub_field('field_5805b694d65f7'),
+                'price'     => get_sub_field('field_5805b735d65fb'),
+                'gift'      => get_sub_field('field_5805c923d7504'),
+                'link'      => get_sub_field('field_5805b749d65fc'),
+                'subtitle'  => get_sub_field('field_5805b6a2d65f8'),
+                'paragraph' => get_sub_field('field_5805b6acd65f9'),
+                'image'     => $image,
+                'content'   => $content,
+
+            );
+
+        }
+    }
+
+    return $section;
+
+}

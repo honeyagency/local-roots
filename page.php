@@ -26,4 +26,8 @@ $post = new TimberPost();
 $context['content'] = getContentSections();
 $context['post'] = $post;
 $context['header'] = getHeaderFields();
+if (is_page(9)) {
+$context['tours'] = getFoodTours();
+}
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
