@@ -77,3 +77,21 @@ function getFoodTours()
     return $section;
 
 }
+function getTourBlocks()
+{
+
+    if (have_rows('field_5806355a78a27')) {
+        while (have_rows('field_5806355a78a27')) {
+            the_row();
+            $imageId   = get_sub_field('field_5806358778a29');
+            $image     = new TimberImage($imageId);
+            $content[] = array(
+                'title' => get_sub_field('field_5806357878a28'),
+                'image' => $image,
+                'link'  => get_sub_field('field_5806366800dad'),
+            );
+        }
+    }
+   
+    return $content;
+}

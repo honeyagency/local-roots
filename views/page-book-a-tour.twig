@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}} " id="post-{{post.ID}}">
+		<section class="spacing--gutter max-wrap init-large-p spacing--dsk-vert-4">
+			{{post.content}}
+		</section>
+		<section class="flex flex-wrap">
+		{% for tour in blocks %}
+			<div class="bg--image grid--half nog overlay spacing--vert-6 border--4 color--white edges" style="background-image:url('{{tour.image}}')">
+				<h2 class="color--yellow border"><a class="color--yellow" href="{{site.url}}/food-tours/#{{tour.link}}">{{tour.title}}</a></h2>
+			</div>
+		{% endfor %}
+	</section>
+	</article>
+{% endblock %}

@@ -33,7 +33,9 @@
 	{% endif %}
 	{% endblock %}
 </header>
+{% if header.image %}
 	<section class="header-image"><img{{header.image|get_timber_image_responsive('header')}}></section>
+{% endif %}
 <main role="main" class="content-wrapper">
 {% if title %}<h1>{{title}}</h1>{% endif %}
 {% block content %}

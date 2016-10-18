@@ -21,13 +21,15 @@
  * @since    Timber 0.1
  */
 
-$context = Timber::get_context();
-$post = new TimberPost();
+$context            = Timber::get_context();
+$post               = new TimberPost();
 $context['content'] = getContentSections();
-$context['post'] = $post;
-$context['header'] = getHeaderFields();
+$context['post']    = $post;
+$context['header']  = getHeaderFields();
 if (is_page(9)) {
-$context['tours'] = getFoodTours();
+    $context['tours'] = getFoodTours();
+} elseif (is_page(13)) {
+    $context['blocks'] = getTourBlocks();
 }
 
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

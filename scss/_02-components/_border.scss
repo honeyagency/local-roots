@@ -12,6 +12,16 @@
 
 .border--4 {
     border: 4px solid;
+
+    &.edges {
+        &:nth-of-type(odd) {
+            border-left: 0;
+        }
+
+        &:nth-of-type(even) {
+            border-right: 0;
+        }
+    }
 }
 
 .border--vert-thick {
