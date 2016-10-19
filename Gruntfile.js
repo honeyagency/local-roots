@@ -37,10 +37,10 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-                // autoprefixer: {
-                //     browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-                //     add: true
-                // }
+                autoprefixer: {
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                    add: true
+                }
             },
             dist: {
                 files: {
