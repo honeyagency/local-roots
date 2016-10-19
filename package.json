@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/joshre/buscemi#readme",
   "devDependencies": {
-    "cssnano": "*",
+    "cssnano": "^3.7.7",
     "grunt": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "*",
