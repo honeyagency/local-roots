@@ -36,4 +36,9 @@ footer {
     .button {
         padding: 6px 10px 4px;
     }
+
+    .max-height {
+        box-sizing: border-box;
+        max-height: 20px;
+    }
 }
