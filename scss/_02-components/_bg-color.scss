@@ -44,10 +44,23 @@
             bottom: 0;
             z-index: 0;
             background-color: transparentize(black, 0.7);
+            transition: background-color 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        }
+    }
+}
+
+a {
+    &.overlay {
+        &:hover {
+            cursor: pointer;
+            &:before {
+                background-color: map-get($blue, main);
+                transition: background-color 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }
         }
     }
 }
 
 .bg--transparent {
     background-color: transparent;
-} 
+}

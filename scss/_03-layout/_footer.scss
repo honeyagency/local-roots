@@ -38,7 +38,9 @@ footer {
     }
 
     .max-height {
-        box-sizing: border-box;
-        max-height: 20px;
+        @include media($screen-sm) {
+            box-sizing: border-box;
+            max-height: 20px;
+        }
     }
 }

@@ -1,6 +1,6 @@
 .section--content-row {
-  @include media($screen-sm) {
-    min-height: 70vh;
-    align-items: stretch;
-  }
+    @include media($screen-sm) {
+        min-height: 580px;
+        align-items: stretch;
+    }
 }
