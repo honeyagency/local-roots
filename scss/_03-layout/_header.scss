@@ -38,8 +38,18 @@
         svg {
             margin-top: 10px;
             margin-bottom: -20px;
-            width: 200px;
+            width: 150px;
             transform: rotate(-10deg);
+
+            @include media($screen-xs) {}
+
+
+            @include media($screen-sm) {}
+
+
+            @include media($screen-md) {
+                width: 200px;
+            }
         }
     }
 }
