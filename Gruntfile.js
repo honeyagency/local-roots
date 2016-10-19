@@ -57,7 +57,7 @@ module.exports = function(grunt) {
                     require('autoprefixer')({
                         browsers: 'last 2 versions'
                     }),
-                    require('cssnano')(),
+                    // require('cssnano')(),
                 ]
             },
             dist: {
