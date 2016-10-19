@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
                 autoprefixer: {
-                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                    browsers: ['> 1%', 'last 3 versions', 'Firefox >= 20'],
                     add: true
                 }
             },
