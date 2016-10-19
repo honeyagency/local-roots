@@ -30,17 +30,35 @@ module.exports = function(grunt) {
                 }
             }
         },
-        cssnano: {
+        // cssnano: {
+        //     options: {
+        //         sourcemap: false,
+        //         'postcss-zindex': false,
+        //         'postcss-merge-idents': true,
+        //         'postcss-discard-duplicates': true,
+        //         'postcss-convert-values': true,
+        //         '': true,
+        //         // 'calc': true,
+        //         autoprefixer: {
+        //             browsers: ['> 1%', 'last 3 versions', 'Firefox >= 20'],
+        //             add: true
+        //         }
+        //     },
+        //     dist: {
+        //         files: {
+        //             '<%= conf.app %>/main.min.css': '<%= conf.app %>/main.min.css'
+        //         }
+        //     }
+        // },
+        postcss: {
             options: {
-                sourcemap: false,
-                'postcss-zindex': false,
-                'postcss-merge-idents': true,
-                'postcss-discard-duplicates': true,
-                'postcss-convert-values': true,
-                autoprefixer: {
-                    browsers: ['> 1%', 'last 3 versions', 'Firefox >= 20'],
-                    add: true
-                }
+                processors: [
+                    require('postcss-flexbugs-fixes'),
+                    require('autoprefixer')({
+                        browsers: 'last 2 versions'
+                    }),
+                    require('cssnano')(),
+                ]
             },
             dist: {
                 files: {
@@ -48,18 +66,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        // postcss: {
-        //     options: {
-        //         processors: [
-        //             require('postcss-font-magician')({
-        //                 hosted: '../fonts/'
-        //             })
-        //         ]
-        //     },
-        //     dist: {
-        //         src: '<%= conf.app %>/main.min.css'
-        //     }
-        // },
         watch: {
             twig: {
                 files: '**/*.twig',
@@ -78,9 +84,9 @@ module.exports = function(grunt) {
                     livereload: true,
                 },
             },
-            cssnano: {
+            postcss: {
                 files: ["<%= conf.sass %>"],
-                tasks: ["cssnano"]
+                tasks: ["postcss"]
             },
             svgmin: {
                 files: ["<%= conf.iconts %>/*.svg"],
@@ -166,6 +172,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.registerTask('default', ['watch', 'notify_hooks']);
     grunt.registerTask('icons', ['svgmin', 'grunticon', 'clean', 'copy']);
-    grunt.registerTask('server', ['uglify', 'sass', 'cssnano', 'svgmin', 'grunticon', 'clean', 'copy']);
+    grunt.registerTask('server', ['uglify', 'sass', 'postcss', 'svgmin', 'grunticon', 'clean', 'copy']);
     grunt.task.run('notify_hooks');
 }

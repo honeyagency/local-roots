@@ -33,6 +33,7 @@
     "grunt-postcss": "^0.8.0",
     "grunt-svgmin": "*",
     "postcss-convert-values": "^2.3.4",
+    "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-font-magician": "^1.4.0"
   }
 }
