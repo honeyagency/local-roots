@@ -53,9 +53,41 @@ a {
     &.overlay {
         &:hover {
             cursor: pointer;
+
             &:before {
-                background-color: map-get($blue, main);
                 transition: background-color 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }
+        }
+
+        &:nth-of-type(1) {
+            &:hover {
+                &:before {
+                    background-color: map-get($blue, main);
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            &:hover {
+                &:before {
+                    background-color: map-get($green, main);
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            &:hover {
+                &:before {
+                    background-color: map-get($yellow, dark);
+                }
+            }
+        }
+
+        &:nth-of-type(4) {
+            &:hover {
+                &:before {
+                    background-color: map-get($red, main);
+                }
             }
         }
     }
