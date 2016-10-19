@@ -6,7 +6,20 @@
 
         svg {
             display: block;
-            width: 250px;
+
+            @include media($screen-xs) {}
+
+
+            @include media($screen-sm) {
+                width: 185px;
+            }
+
+
+            @include media($screen-md) {
+                width: 250px;
+            }
+
+
             height: auto;
         }
     }
@@ -32,8 +45,9 @@
 }
 
 header {}
-.header-image{
-    img{
+
+.header-image {
+    img {
         width: 100% !important;
     }
 }
