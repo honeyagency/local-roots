@@ -23,14 +23,26 @@
         }
     }
 
-    &:after {
+    .flag {
         background-color: map-get($yellow, dark);
-        content: '';
         display: block;
         left: 0;
         top: 100%;
         position: absolute;
-        height: 10px;
+        height: 20px;
+        width: 20px;
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            height: 28px;
+            width: 19px;
+            background-color: map-get($blue, main);
+            left: -6px;
+            top: 3px;
+            transform: rotate(-45deg);
+        }
     }
 
     .text {
