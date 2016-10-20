@@ -3,16 +3,18 @@ footer {
 
     .icon-logo {
         position: absolute;
-        left: -5px;
-        top: -35px;
-        width: 240px;
-        height: 240px;
+        left: -6px;
+        top: -45px;
+        width: 200px;
+        height: 200px;
         transform: rotate(-10deg);
+        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
         svg {
             path {
                 &:first-of-type {
                     fill: transparent;
+                    transition: opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
                 }
             }
         }
@@ -41,6 +43,28 @@ footer {
         @include media($screen-sm) {
             box-sizing: border-box;
             max-height: 20px;
+        }
+    }
+
+    @include media($max-md) {
+        overflow: hidden;
+
+        .icon-logo {
+            left: initial;
+            right: -6px;
+            width: 200px;
+            height: 200px;
+            transform: rotate(10deg);
+            transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+            svg {
+                path {
+                    // fill: map-get($yellow, dark);
+                    fill: black;
+                    transition: opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                    opacity: .1;
+                }
+            }
         }
     }
 }
