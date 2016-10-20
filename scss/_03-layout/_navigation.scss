@@ -122,15 +122,17 @@ body {
     }
 }
 
-.nav-wrap {
-    position: relative;
+.home {
+    .nav-wrap {
+        position: relative;
 
-    @include media($screen-sm) {
-        top: -13px;
-    }
+        @include media($screen-sm) {
+            top: -13px;
+        }
 
 
-    @include media($screen-md) {
-        top: -35px;
+        @include media($screen-md) {
+            top: -35px;
+        }
     }
 }
