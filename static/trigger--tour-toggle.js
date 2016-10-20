@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
-    $('.trigger--tour-toggle').on('click touchstart',  '.border--4', function(event) {
+    $('.trigger--tour-toggle').on('click touchstart',  '.choose', function(event) {
         event.preventDefault();
-        $(this).toggleClass('open');
+        $(this).parent('.trigger--tour-toggle').toggleClass('open');
     });
 });

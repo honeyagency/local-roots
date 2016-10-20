@@ -12,9 +12,12 @@
 }
 
 .tourSelect {
-    width: 330px;
+    @include media($screen-sm) {
+        width: 330px;
+    }
 
-    .border--4 {
+
+    .choose {
         border: 0;
         border-bottom-width: 0px;
         border-bottom-style: solid;
@@ -24,6 +27,19 @@
         position: relative;
         padding: 0.2em 0.4em 0em 0.4em;
         transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        i {
+            width: 20px;
+            height: 30px;
+            display: inline-block;
+            float: right;
+            transform-origin: center;
+            transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        }
     }
 
     .tour {
@@ -38,6 +54,11 @@
         padding: 0;
         transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         opacity: 0;
+
+        &:hover {
+            background-color: $gray;
+            cursor: pointer;
+        }
     }
 
     &.open {
@@ -45,19 +66,33 @@
             transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
             top: inherit;
             line-height: 1.6;
-            margin: 0 0.4em;
-            padding: 0.3em  0;
             opacity: 1;
-            border-bottom: 2px solid;
+            padding: .6em .5em 0em .5em;
+
+            &:after {
+                content: ' ';
+                display: block;
+                margin-top: .4em;
+                border-bottom: 2px solid;
+            }
 
             &:last-of-type {
-                border-bottom: none;
+                padding-bottom: .4em;
+
+                &:after {
+                    display: none;
+                }
             }
         }
 
-        .border--4 {
+        .choose {
             border-bottom-width: 7px;
             transition: border-bottom-width 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+            i {
+                transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                transform: rotate(180deg);
+            }
         }
     }
 }
