@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+{% block content %}
+
+	<section class="spacing--gutter spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-1 spacing--dsk-vert-2">
+		<select name="tourSelect" class="tourSelect grid--sm-fourth icon-arrow-down dsk--hide" value="">
+			<option value="choose">Choose Your Tour</option>
+			{% for tour in tours %}
+				<option value="tourIndex-{{loop.index}}">{{tour.title}}</option>
+			{% endfor %}
+		</select>
+		<div name="tourSelect" class="tourSelect border--4 trigger--tour-toggle font--semi-bold mobile--hide" value="">
+			<div value="choose" class="choose text--uppercase letter--1 border--4" ><span>Choose Your Tour</span> <i class="icon-arrow-down" data-grunticon-embed></i></div>
+			{% for tour in tours %}
+				<div data-value="tourIndex-{{loop.index}}" class="tour">{{tour.title}}</div>
+			{% endfor %}
+		</div>
+	</section>
+	{% for tour in tours %}
+		<article class="{% if current %}{% if current == tour.title %}current{% endif %}{% elseif loop.first %}current{% endif %} tours tour-{{loop.index}}" data-tour="tourIndex-{{loop.index}}">
+		<section class="spacing--gutter spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-1">
+			<h2>{{tour.title}}</h2>
+			<p class="font--headline font--semi-bold">{{tour.subtitle}}</p>
+			<div class="">{{tour.paragraph}}</div>
+		</section>
+		<section class="flex flex-wrap">
+			<div class="grid--one grid--sm-half nog bg--image spacing--vert-4 spacing--dsk-vert-5" style="background-image:url('{{tour.image}}')"></div>
+			<div class="block--pricing grid--one grid--sm-half nog bg--blue color--yellow text--center spacing--vert-2 spacing--dsk-vert-5">
+				<h2>{{tour.title}}</h2>
+				<hr class="small">
+				<div class="font--headline">{{tour.price}}</div>
+				{% if tour.link %}<a class="button color--yellow" href="{{tour.link}}"><h2 class="border">Book Now ></h2></a>{% endif %}
+			</div>
+		</section>
+		<section class="spacing--gutter spacing--horiz-2 spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-2 spacing--dsk-vert-4">
+			{% set content = tour %}
+			{% include 'components/sections/section--content.twig' %}
+		</section>
+	</article>
+{% endfor %}
+{% endblock %}
