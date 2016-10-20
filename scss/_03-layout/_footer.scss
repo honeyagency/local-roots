@@ -8,13 +8,11 @@ footer {
         width: 200px;
         height: 200px;
         transform: rotate(-10deg);
-        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
         svg {
             path {
                 &:first-of-type {
                     fill: transparent;
-                    transition: opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
                 }
             }
         }
@@ -55,13 +53,11 @@ footer {
             width: 200px;
             height: 200px;
             transform: rotate(10deg);
-            transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
             svg {
                 path {
                     // fill: map-get($yellow, dark);
                     fill: black;
-                    transition: opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
                     opacity: .1;
                 }
             }

@@ -7,7 +7,57 @@
 }
 
 .icon-arrow-down {
-	min-width: 330px;
     background-size: 20px;
     background-position: 95%;
+}
+
+.tourSelect {
+    width: 330px;
+
+    .border--4 {
+        border: 0;
+        border-bottom-width: 0px;
+        border-bottom-style: solid;
+        border-bottom-color: black;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        padding: 0.2em 0.4em 0em 0.4em;
+        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+
+    .tour {
+        margin: 0.2em 0.4em 0em 0.4em;
+    }
+
+    .tour {
+        top: -40px;
+        position: relative;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        opacity: 0;
+    }
+
+    &.open {
+        .tour {
+            transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            top: inherit;
+            line-height: 1.6;
+            margin: 0 0.4em;
+            padding: 0.3em  0;
+            opacity: 1;
+            border-bottom: 2px solid;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        .border--4 {
+            border-bottom-width: 7px;
+            transition: border-bottom-width 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        }
+    }
 }
