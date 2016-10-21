@@ -4,6 +4,12 @@ body {
     font-size: $base-font-size;
     color: $base-font-color;
     font-weight: 400;
+
+    ::selection {
+        text-align: justify !important;
+        background-color: map-get($yellow, main) !important;
+        color: white !important;
+    }
 }
 
 %headings {
