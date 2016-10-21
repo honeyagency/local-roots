@@ -61,3 +61,9 @@ header {}
         width: 100% !important;
     }
 }
+
+.section--home-intro {
+    @include media($screen-sm) {
+        margin-top: -2em;
+    }
+}
