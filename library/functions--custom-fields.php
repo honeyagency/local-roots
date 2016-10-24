@@ -92,6 +92,36 @@ function getTourBlocks()
             );
         }
     }
-   
+
     return $content;
+}
+function getHomepageFields()
+{
+    $sectionOneImageId   = get_field('field_580e6dbf5a957');
+    $sectionTwoImageId   = get_field('field_580e6e235a95e');
+    $sectionThreeImageId = get_field('field_580e6e5ddea93');
+    $sectionFourImageId  = get_field('field_580e6f54f1b04');
+    $section             = array(
+        'intro-text'                    => get_field('field_580e6d965a954'),
+        'section-one-text'              => get_field('field_580e6dae5a956'),
+        'section-one-text-link'         => get_field('field_580e74df9cd2f'),
+        'section-one-background-image'  => new TimberImage($sectionOneImageId),
+        'section-one-copy'              => get_field('field_580e6dd45a958'),
+        'section-one-link-text'         => get_field('field_580e6de65a959'),
+        'section-one-link-url'          => get_field('field_580e6df05a95a'),
+        'section-two-text'              => get_field('field_580e6e025a95c'),
+        'section-two-author'            => get_field('field_580e6e1b5a95d'),
+        'section-two-background-image'  => new TimberImage($sectionTwoImageId),
+        'section-three-title-text'      => get_field('field_580e6e4ddea92'),
+        'section-three-title-link'      => get_field('field_580e75049cd30'),
+        'section-three-bg-image'        => new TimberImage($sectionThreeImageId),
+        'section-three-text'            => get_field('field_580e6e77dea94'),
+        'section-three-link-text'       => get_field('field_580e6e87dea95'),
+        'section-three-link-url'        => get_field('field_580e6e9fdea96'),
+        'section-four-small-text'       => get_field('field_580e6f37a2b51'),
+        'section-four-yellow-text'      => get_field('field_580e6f47a2b52'),
+        'section-four-yellow-link'      => get_field('field_580e752e9cd31'),
+        'section-four-background-image' => new TimberImage($sectionFourImageId),
+    );
+    return $section;
 }

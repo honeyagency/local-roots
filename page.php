@@ -27,6 +27,9 @@ $context['content'] = getContentSections();
 $context['post']    = $post;
 $context['header']  = getHeaderFields();
 
+if (is_front_page()) {
+    $context['home'] = getHomepageFields();
+}
 if (is_page(9)) {
     $context['tours'] = getFoodTours();
     if (!empty($_GET['tour'])) {

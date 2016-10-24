@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
 	<article class="post-type-{{post.post_type}} spacing--dsk-vert-" id="post-{{post.ID}}">
-		
+		{{home|print_r}}
 		<section class="flex flex-wrap align--center section--content-row">
 			<section class="flex grid--one flex-wrap section--content-row">
 				<div class="grid--one flex flex--column justify--center grid--md-half nog bg--image overlay cover align--center spacing--vert-3 border--vert-thick" style="background-image:url('{{site.url}}/wp-content/uploads/2016/10/home-01.jpg')">
