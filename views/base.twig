@@ -33,8 +33,14 @@
 	{% endif %}
 	{% endblock %}
 </header>
-{% if header.image %}
-	<section class="header-image"><img{{header.image|get_timber_image_responsive('header')}}></section>
+{# {{header.image|.}} #}
+{% if header.image.file  %}
+	<section class="header-image">
+
+	{# <img src=""> #}
+	<img src="{{header.image|resize(1200)}}" srcset="{{header.image|resize(640, 384)}} 1x, {{header.image|resize(800, 480)}} 2x, {{header.image|resize(1200)}} 3x" alt="">
+
+</section>
 {% endif %}
 <main role="main" class="content-wrapper">
 {% if title %}<h1>{{title}}</h1>{% endif %}

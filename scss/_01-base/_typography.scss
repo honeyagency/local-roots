@@ -1,7 +1,13 @@
 body {
     font-family: $base-sans-font;
     line-height: $base-line-height;
-    font-size: $base-font-size;
+    font-size: 1.2rem;
+
+    @include media($screen-sm) {
+        font-size: $base-font-size;
+    }
+
+
     color: $base-font-color;
     font-weight: 400;
 
@@ -194,8 +200,13 @@ p {
 hr {
     &.small {
         border: none;
-        border-bottom: 5px solid;
         width: 2.75em;
-        margin: 1em auto;
+        border-bottom: 4px solid;
+        margin: 0.7em auto;
+
+        @include media($screen-sm) {
+            border-bottom: 5px solid;
+            margin: 1em auto;
+        }
     }
 }

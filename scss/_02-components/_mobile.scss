@@ -3,8 +3,21 @@
         display: none !important;
     }
 }
+
 .dsk--hide {
     @include media($screen-sm) {
         display: none !important;
+    }
+}
+
+.mobile--stretch {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @include media($screen-sm) {
+        display: none;
     }
 }

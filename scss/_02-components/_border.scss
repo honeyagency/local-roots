@@ -16,10 +16,13 @@
     &.edges {
         &:nth-of-type(odd) {
             border-left: 0;
+            border-right: 0;
+            border-top: 0;
         }
 
         &:nth-of-type(even) {
             border-right: 0;
+            border-top: 0;
         }
 
         @include media($max-sm) {
@@ -36,11 +39,15 @@
 
 .border--vert-thick {
     @include media($screen-sm) {
-        border-top: 10px solid white;
-        border-bottom: 10px solid white;
+        border-top: 7px solid white;
+        border-bottom: 7px solid white;
     }
 }
 
 .border--top-thick {
-    border-top: 10px solid white;
+    border-top: 5px solid white;
+
+    @include media($screen-sm) {
+        border-top: 7px solid white;
+    }
 }

@@ -1,14 +1,26 @@
 {% extends "base.twig" %}
 {% block content %}
 	<section class="spacing--gutter max-wrap spacing--vert-2 spacing--dsk-vert-3">
-	{% include 'components/sections/section--content.twig' %}
+		{% include 'components/sections/section--content.twig' %}
 	</section>
-	<section class="bg--yellow color--green text--center spacing--vert-5">
+	<section class="bg--yellow color--green text--center spacing--vert-2 spacing--dsk-vert-5">
 		<h2>"First We Eat<br>then we do<br> everything else"</h2>
 		<hr class="small">
 		MFK Fisher
 	</section>
-	<section class="flex flex-wrap border--vert-thick"> 
+	<section class="flex flex-wrap bg--gray-faded">
+		<section class="flex flex-wrap grid--one nog align--center section--content-row alternate border--vert-thick">
+			<div class="grid--sm-half grid--one nog bg--image cover" style="background-image:url('http://localroots.dev/wp-content/uploads/2016/10/bg.jpg');">
+			</div>
+			<div class="grid--sm-half grid--one nog text flex flex--column justify--center nog text--center spacing--vert-2"><h2>Dawnie Andrak</h2><em>Owner + Tour Guide</em></div>
+		</section>
+		<section class="flex flex-wrap grid--one nog align--center section--content-row alternate">
+			<div class="grid--sm-half grid--one nog bg--image cover" style="background-image:url('http://localroots.dev/wp-content/uploads/2016/10/bg-2.jpg');"></div>
+			<div class="grid--sm-half grid--one nog text flex flex--column justify--center nog text--center spacing--vert-2"><h2>Tim Bailey</h2><em>Owner + Tour Guide</em></div>
+			
+		</section>
+	</section>
+	<section class="flex flex-wrap border--vert-thick">
 		<div class="bg--image grid--one grid--sm-half nog spacing--vert-4" style="background-image:url('{{site.url}}/wp-content/uploads/2016/10/about-1.jpg')">
 			
 		</div>

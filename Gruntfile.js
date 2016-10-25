@@ -80,13 +80,14 @@ module.exports = function(grunt) {
             sass: {
                 files: ["<%= conf.sass %>"],
                 tasks: ["sass"],
-                options: {
-                    livereload: true,
-                },
+              
             },
             postcss: {
                 files: ["<%= conf.sass %>"],
-                tasks: ["postcss"]
+                tasks: ["postcss"],
+                  options: {
+                    livereload: true,
+                },
             },
             svgmin: {
                 files: ["<%= conf.iconts %>/*.svg"],

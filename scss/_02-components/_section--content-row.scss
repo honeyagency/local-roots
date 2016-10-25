@@ -3,4 +3,28 @@
         min-height: 580px;
         align-items: stretch;
     }
+
+
+    @include media($max-sm) {
+        div {
+            min-height: 240px;
+
+            div {
+                min-height: none;
+            }
+        }
+    }
+
+
+    &.alternate {
+        @include media($screen-sm) {
+            &:nth-of-type(even) {
+                div {
+                    &:last-of-type {
+                        order: -1;
+                    }
+                }
+            }
+        }
+    }
 }

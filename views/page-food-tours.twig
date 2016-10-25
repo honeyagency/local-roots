@@ -5,11 +5,19 @@
 			{{post.content}}
 		</section>
 		<section class="flex flex-wrap">
-		{% for tour in blocks %}
-			<a href="{{site.url}}/all-tours/?tour={{tour.title}}" class="bg--image grid--one grid--sm-half nog overlay spacing--vert-4 spacing--dsk-vert-6 border--4 color--white edges" style="background-image:url('{{tour.image}}')">
-				<h2 class="color--yellow border text--center">{{tour.title}}</h2>
-			</a>
-		{% endfor %}
-	</section>
+			{% for tour in blocks.content %}
+				<a href="{{site.url}}/all-tours/?tour={{tour.title}}" class="bg--image grid--one grid--sm-half nog overlay spacing--vert-4 spacing--dsk-vert-6 border--4 color--white edges" style="background-image:url('{{tour.image|resize(1200)}}')">
+					<h2 class="color--yellow border text--center">{{tour.title}}</h2>
+				</a>
+			{% endfor %}
+		</section>
+		{% if blocks.text_section %}
+			<section class="bg--blue text--center spacing--vert-2 spacing--dsk-vert-5">
+				<h2>{{blocks.text_section}}</h2>
+				<hr class="small">
+				{{blocks.small_text}}
+			</section>
+		{% endif %}
+		
 	</article>
 {% endblock %}

@@ -19,9 +19,9 @@ function getSiteOptions()
 }
 function getHeaderFields()
 {
-    // $imageId =
+    $imageId = get_field('field_57eeae178cf5d');
     $section = array(
-        'image' => get_field('field_57eeae178cf5d'),
+        'image' => new TimberImage($imageId),
     );
     return $section;
 }
@@ -92,8 +92,12 @@ function getTourBlocks()
             );
         }
     }
-
-    return $content;
+    $section = array(
+        'content'            => $content,
+        'text_section' => get_field('field_580fda8b71d7a'),
+        'small_text'   => get_field('field_580fda9c71d7b'),
+    );
+    return $section;
 }
 function getHomepageFields()
 {

@@ -7,7 +7,7 @@
 					<h2 class="color--yellow text--center border"><a class="color--yellow" href="{{home.section_one_text_link}}">{{home.section_one_text}}</a></h2>
 				</div>
 				<div class="grid--one flex flex--column justify--center grid--md-half nog bg--white spacing--gutter spacing--vert-1 spacing--dsk-horiz-5">
-					{{home.section_one_copy}}<br><a href="{{home.section_one_link_url}}">{{home.section_one_link_text}}</a>
+					{{home.section_one_copy}}<a href="{{home.section_one_link_url}}">{{home.section_one_link_text}}</a>
 				</div>
 			</section>
 		</section>
@@ -19,17 +19,20 @@
 					{{home.section_two_author}}
 				</div>
 				<div class="grid--one flex flex--column justify--center grid--sm-half nog bg--image cover" style="background-image:url('{{home.section_two_background_image|resize(1200)}}');">
-					<a href="http://instagram.com/{{options.social.instagram}}" target="_blank" class="bg--yellow color--black tab--insta"><i class="icon-social--instagram-nob" data-grunticon-embed></i><span class="text">Follow<br>Us</span><span class="flag"></span></a>
+					<a href="http://instagram.com/{{options.social.instagram}}" target="_blank" class="bg--yellow color--black tab--insta hidden--mobile"><i class="icon-social--instagram-nob" data-grunticon-embed></i><span class="text">Follow<br>Us</span><span class="flag"></span></a>
+					<a href="http://instagram.com/{{options.social.instagram}}" target="_blank" class="mobile--stretch hidden--dsk">
+					<span href="http://instagram.com/{{options.social.instagram}}" target="_blank" class="bg--yellow color--black tab--insta"><i class="icon-social--instagram-nob" data-grunticon-embed></i><span class="text">Follow<br>Us</span><span class="flag"></span></span>
+				</a>
 				</div>
 			</section>
 		</section>
 		<section class="flex flex-wrap align--center section--content-row">
 			<section class="flex flex-wrap grid--one align--center section--content-row">
-				<div class="grid--one flex flex--column justify--center grid--md-half nog align--center bg--image overlay cover spacing--vert-3 border--vert-thick" style="background-image:url('{{home.section_three_bg_image|resize(1200)}}')">
+				<div class="grid--one flex flex--column justify--center grid--md-half nog align--center bg--image overlay cover spacing--vert-3 border--vert-thick border--top-thick" style="background-image:url('{{home.section_three_bg_image|resize(1200)}}')">
 					<h2 class="color--yellow text--center border"><a class="color--yellow" href="{{home.section_three_title_link}}">{{home.section_three_title_text}}</a></h2>
 				</div>
 				<div class="grid--one flex flex--column justify--center grid--md-half nog bg--white spacing--gutter spacing--vert-2 spacing--dsk-horiz-5">
-					{{home.section_three_text}}<br><a href="{{home.section_three_link_url}}">{{home.section_three_link_text}}</a>
+					{{home.section_three_text}}<a href="{{home.section_three_link_url}}">{{home.section_three_link_text}}</a>
 				</div>
 			</section>
 		</section>
@@ -40,6 +43,7 @@
 					<h2 class="text--center border"><a class="color--yellow" href="{{home.section_four_yellow_link}}">{{home.section_four_yellow_text}}</a></h2>
 				</div>
 				<div class="grid--one flex flex--column justify--center grid--sm-half nog bg--image  cover" style="background-image:url('{{home.section_four_background_image|resize(1200)}}')">
+					<a class="color--yellow mobile--stretch" href="{{home.section_four_yellow_link}}"></a>
 				</div>
 			</section>
 		</section>

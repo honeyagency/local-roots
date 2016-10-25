@@ -13,14 +13,32 @@ nav {
                 display: inline;
 
                 &:last-of-type {
-                    padding: 6px 10px 4px;
+                    @include media($screen-sm) {
+                        padding: 6px 10px 4px;
+
+                        a {
+                            font-weight: 600;
+                            font-size: .9em;
+                        }
+
+                        border: 4px solid;
+                    }
+                }
+
+                position: relative;
+
+                @include media($max-sm) {
+                    height: 55px;
 
                     a {
-                        font-weight: 600;
-                        font-size: .9em;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        height: 100%;
+                        line-height: 2.2;
                     }
-
-                    border: 4px solid;
                 }
             }
         }
@@ -29,7 +47,7 @@ nav {
     @include media($max-sm) {
         height: 100%;
         position: fixed;
-        top: 63px;
+        top: 55px;
         left: 0;
         right: 0;
         transform: translateX(100vw);
