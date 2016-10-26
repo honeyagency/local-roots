@@ -6,11 +6,11 @@
 		<a target="_blank" href="{{options.social.phone}}" class="color--black font--larger dsk--hide"><i class="icon-phone spacing--horiz-1" data-grunticon-embed></i> {{options.social.phone}}</a>
 		<span target="_blank" href="{{options.social.phone}}" class="color--black font--larger mobile--hide"><i class="icon-phone spacing--horiz-1" data-grunticon-embed></i> {{options.social.phone}}</span>
 	</span>
-	<div>
-		<a target="_blank" href="{{options.social.facebook}}"><i class="icon-social--facebook" data-grunticon-embed></i></a>
-		<a target="_blank" href="http://twitter.com/{{options.social.twitter}}"><i class="icon-social--twitter" data-grunticon-embed></i></a>
-		<a target="_blank" href="{{options.social.pinterest}}"><i class="icon-social--pinterest" data-grunticon-embed></i></a>
-		<a target="_blank" href="http://instagram.com/{{options.social.instagram}}"><i class="icon-social--instagram" data-grunticon-embed></i></a>
-		<a target="_blank" href="{{options.social.linkedin}}"><i class="icon-social--linkedin" data-grunticon-embed></i></a>
+	<div style="width:150px;" class="flex flex--wrap justify--between">
+		{% if options.social.facebook != '' %}<a target="_blank" href="{{options.social.facebook}}"><i class="icon-social--facebook" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.twitter != '' %}<a target="_blank" href="http://twitter.com/{{options.social.twitter}}"><i class="icon-social--twitter" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.pinterest != '' %}<a target="_blank" href="{{options.social.pinterest}}"><i class="icon-social--pinterest" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.instagram != '' %}<a target="_blank" href="http://instagram.com/{{options.social.instagram}}"><i class="icon-social--instagram" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.linkedin != '' %}<a target="_blank" href="{{options.social.linkedin}}"><i class="icon-social--linkedin" data-grunticon-embed></i></a>{% endif %}
 	</div>
 </section>
