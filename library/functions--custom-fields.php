@@ -42,6 +42,41 @@ function getContentSections()
     );
     return $section;
 }
+function getAboutFields()
+{
+
+    if (have_rows('field_580fed38e6020')) {
+        while (have_rows('field_580fed38e6020')) {
+            the_row();
+            $teamImageId = get_sub_field('field_580fed46e6021');
+            $teamImage   = new TimberImage($teamImageId);
+            $team[]      = array(
+                'name'  => get_sub_field('field_580fee17e6022'),
+                'title' => get_sub_field('field_580fee26e6023'),
+                'image' => $teamImage,
+            );
+        }
+    }
+    $quote = array(
+        'text'   => get_field('field_580fee55e6025'),
+        'author' => get_field('field_580fee62e6026'),
+    );
+    $tourImageId = get_field('field_580fefd3ceaae');
+    $tourImage   = new TimberImage($tourImageId);
+    $tour        = array(
+        'image' => $tourImage,
+        'text'  => get_field('field_580fefeeceaaf'),
+        'url'   => get_field('field_580feff6ceab0'),
+    );
+
+    $section = array(
+        'team'  => $team,
+        'quote' => $quote,
+        'tour'  => $tour,
+    );
+    return $section;
+}
+
 function getFoodTours()
 {
     if (have_rows('field_5805b688d65f6')) {
@@ -93,7 +128,7 @@ function getTourBlocks()
         }
     }
     $section = array(
-        'content'            => $content,
+        'content'      => $content,
         'text_section' => get_field('field_580fda8b71d7a'),
         'small_text'   => get_field('field_580fda9c71d7b'),
     );

@@ -35,6 +35,8 @@ if (is_page(9)) {
     if (!empty($_GET['tour'])) {
         $context['current'] = $_GET['tour'];
     }
+} elseif (is_page(7)) {
+    $context['about'] = getAboutFields();
 } elseif (is_page(13)) {
     $context['blocks'] = getTourBlocks();
 } else {
