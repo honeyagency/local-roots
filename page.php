@@ -26,7 +26,9 @@ $post               = new TimberPost();
 $context['content'] = getContentSections();
 $context['post']    = $post;
 $context['header']  = getHeaderFields();
-
+if (!empty($_GET['tab'])) {
+        $context['current'] = $_GET['tab'];
+    }
 if (is_front_page()) {
     $context['home'] = getHomepageFields();
 }
@@ -40,9 +42,7 @@ if (is_page(9)) {
 } elseif (is_page(13)) {
     $context['blocks'] = getTourBlocks();
 } else {
-    if (!empty($_GET['tab'])) {
-        $context['current'] = $_GET['tab'];
-    }
+    
 }
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
