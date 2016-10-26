@@ -12,8 +12,14 @@ function getSiteOptions()
         'email'     => get_field('field_58058e1e3c56d', 'option'),
 
     );
+    $optionsImageId = get_field('field_580ffc8c1b8e5', 'option');
+    $optionsImage   = new TimberImage($optionsImageId);
+    $info           = array(
+        'image' => $optionsImage,
+    );
     $section = array(
         'social' => $social,
+        'info'   => $info,
     );
     return $section;
 }

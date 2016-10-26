@@ -1,7 +1,23 @@
 {
     "key": "group_57ee9bd236634",
-    "title": "Contact",
+    "title": "Options",
     "fields": [
+        {
+            "key": "field_580ffc7b1b8e3",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
         {
             "key": "field_57ee9be14ea9f",
             "label": "Phone Number",
@@ -133,6 +149,46 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_580ffc831b8e4",
+            "label": "Info",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_580ffc8c1b8e5",
+            "label": "Default Social Image",
+            "name": "default_social_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -152,5 +208,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476761945
+    "modified": 1477442715
 }

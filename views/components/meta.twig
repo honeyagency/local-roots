@@ -1,8 +1,6 @@
 {# Title #}
 {% if post.slug == 'home' %}
 	{% set metaTitle = site.name %}
-{% elseif header.title != '' %}
-	{% set metaTitle = header.name %}
 {% elseif wp_title %}
 	{% set metaTitle = wp_title %}
 {% else %}
@@ -11,17 +9,10 @@
 {# Description #}
 {% if post.slug == 'home' %}
 	{% set metaDescription = site.description %}
-{% elseif post.id == 23 %}
-	{% set metaDescription = order.paragraph|striptags %}
-{% elseif post.id == 26 %}
-	{% set metaDescription = chefs.paragraph|striptags %}
-{% elseif content_sections %}
-	{% set metaDescription = '' %}
-	{% for item in content_sections|slice(0, 1) %}
-		{% set metaDescription = item.content|striptags|excerpt(40) %}
-	{% endfor %}
-{% else %}
-	{% set metaDescription = post.post_excerpt %}
+{% elseif post.content != '' %}
+	{% set metaTitle = post.content|striptags|trim|slice(0,300) %}
+{% elseif content.content != '' %}
+	{% set metaTitle = content.content[0].content|striptags|trim|slice(0,300) %}
 {% endif %}
 {% if post.slug == 'home' %}
 	{% set metaImage = options.info.image %}
