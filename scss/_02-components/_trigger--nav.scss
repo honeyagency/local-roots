@@ -3,6 +3,7 @@
     height: 20px;
     top: 1px;
     display: block;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
         cursor: pointer;
@@ -38,10 +39,11 @@
         border-bottom: 1px solid;
         height: 0px;
         width: 25px;
-        transition: width 0.16s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        transition: opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), width 0.16s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         margin: 0;
         display: block;
         top: 50%;
+        opacity: 1;
 
         // left: 50%;
         position: absolute;
