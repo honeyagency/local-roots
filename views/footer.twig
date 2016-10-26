@@ -3,14 +3,14 @@
 		<h6>Contact</h6>
 		<a target="_blank" href="{{options.social.phone}}" class="color--black font--larger"><i class="icon-phone" data-grunticon-embed></i> {{options.social.phone}}</a><br>
 		<a href="mailto:{{options.social.email}}" class="color--black font--larger"><i class="icon-email" data-grunticon-embed></i> Email Us</a>
-		<p class="social">
-			<a target="_blank" href="{{options.social.facebook}}"><i class="icon-social--facebook" data-grunticon-embed></i></a>
-			<a target="_blank" href="http://twitter.com/{{options.social.twitter}}"><i class="icon-social--twitter" data-grunticon-embed></i></a>
-			<a target="_blank" href="{{options.social.pinterest}}"><i class="icon-social--pinterest" data-grunticon-embed></i></a>
-			<a target="_blank" href="http://instagram.com/{{options.social.instagram}}"><i class="icon-social--instagram" data-grunticon-embed></i></a>
-			<a target="_blank" href="{{options.social.linkedin}}"><i class="icon-social--linkedin" data-grunticon-embed></i></a>
+		<p class="social flex justify--between " style="width:190px;">
+			{% if options.social.facebook != '' %}<a target="_blank" href="{{options.social.facebook}}"><i class="icon-social--facebook" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.twitter != '' %}<a target="_blank" href="http://twitter.com/{{options.social.twitter}}"><i class="icon-social--twitter" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.pinterest != '' %}<a target="_blank" href="{{options.social.pinterest}}"><i class="icon-social--pinterest" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.instagram != '' %}<a target="_blank" href="http://instagram.com/{{options.social.instagram}}"><i class="icon-social--instagram" data-grunticon-embed></i></a>{% endif %}
+{% if options.social.linkedin != '' %}<a target="_blank" href="{{options.social.linkedin}}"><i class="icon-social--linkedin" data-grunticon-embed></i></a>{% endif %}
 		</p>
-		<a class="border button color--black font--semi-bold letter--1 text--uppercase border--4" href="{{site.url}}/book-a-tour/">Book A Tour</a>
+		<a class="border button color--black font--semi-bold letter--1 text--uppercase border--4" href="https://a.zozi.com/#/express/local-roots-food-toursca/products" target="_blank">Book A Tour</a>
 	</div>
 	<div class="grid--one grid--sm-half spacing--gutter spacing--dsk-horiz-0 spacing--vert-1 spacing--dsk-vert-0">
 		<h2>Email Signup</h2>
