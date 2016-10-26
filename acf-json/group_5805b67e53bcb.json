@@ -98,6 +98,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_58100452b0a95",
+                    "label": "Link Text",
+                    "name": "food_tour_link_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5805b6a2d65f8",
                     "label": "Sub Text",
                     "name": "food_tour_subtitle",
@@ -238,5 +257,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1476774272
+    "modified": 1477444705
 }

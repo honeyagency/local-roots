@@ -105,6 +105,7 @@ function getFoodTours()
                 'price'     => get_sub_field('field_5805b735d65fb'),
                 'gift'      => get_sub_field('field_5805c923d7504'),
                 'link'      => get_sub_field('field_5805b749d65fc'),
+                'link_text' => get_sub_field('field_58100452b0a95'),
                 'subtitle'  => get_sub_field('field_5805b6a2d65f8'),
                 'paragraph' => get_sub_field('field_5805b6acd65f9'),
                 'image'     => $image,
