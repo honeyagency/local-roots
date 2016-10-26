@@ -34,7 +34,7 @@ select,
 textarea {
     display: block;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 
     @include media($screen-sm) {
         font-size: $base-font-size;
@@ -131,9 +131,16 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 0.3em 0.3em 0.2em 0.3em;
-    border: 5px solid;
+    border: 7px solid;
     font-weight: 500;
     letter-spacing: 1px;
+
+    &.contentSelect {
+        @include media($max-sm) {
+            margin-bottom: 1em;
+            min-height: 42px;
+        }
+    }
 }
 
 [type="submit"] {
