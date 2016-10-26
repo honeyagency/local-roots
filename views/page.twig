@@ -1,10 +1,13 @@
 {% extends "base.twig" %}
-
 {% block content %}
-		<article class="post-type-{{post.post_type}} max-wrap spacing--dsk-vert-4" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-					{{post.content}}
-			</section>
-		</article>
+	<article class="post-type-{{post.post_type}} max-wrap spacing--dsk-vert-4" id="post-{{post.ID}}">
+		<section class="article-content">
+			<h1 class="article-h1">{{post.title}}</h1>
+			{% if content.content %}
+				{% include 'components/sections/section--content.twig' %}
+			{% elseif post.content %}
+				{{post.content}}
+			{% endif %}
+		</section>
+	</article>
 {% endblock %}

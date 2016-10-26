@@ -1,0 +1,43 @@
+{# Title #}
+{% if post.slug == 'home' %}
+	{% set metaTitle = site.name %}
+{% elseif header.title != '' %}
+	{% set metaTitle = header.name %}
+{% elseif wp_title %}
+	{% set metaTitle = wp_title %}
+{% else %}
+	{% set metaTitle = site.name %}
+{% endif %}
+{# Description #}
+{% if post.slug == 'home' %}
+	{% set metaDescription = site.description %}
+{% elseif post.id == 23 %}
+	{% set metaDescription = order.paragraph|striptags %}
+{% elseif post.id == 26 %}
+	{% set metaDescription = chefs.paragraph|striptags %}
+{% elseif content_sections %}
+	{% set metaDescription = '' %}
+	{% for item in content_sections|slice(0, 1) %}
+		{% set metaDescription = item.content|striptags|excerpt(40) %}
+	{% endfor %}
+{% else %}
+	{% set metaDescription = post.post_excerpt %}
+{% endif %}
+{% if post.slug == 'home' %}
+	{% set metaImage = options.info.image %}
+{% elseif header.image %}
+	{% set metaImage = header.image|resize(1200, 665) %}
+{% elseif post.get_thumbnail.src != '' %}
+	{% set metaImage = post.get_thumbnail.src %}
+{% else %}
+	{% set metaImage = options.info.image %}
+{% endif %}
+<meta charset="{{site.charset}}" />
+<title> {{metaTitle}}</title>
+<meta name="description" content="{{metaDescription}}">
+<meta property="og:title" content="{{metaTitle}}">
+<meta property="og:description" content="{{metaDescription}}">
+<meta property="og:image" content="{{metaImage}}">
+<meta property="og:url" content="{{post.permalink}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="og:site_name" content="{{site.name}}">
