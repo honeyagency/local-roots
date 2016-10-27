@@ -1,5 +1,6 @@
 .hdr-logo-link {
     display: inline;
+    -webkit-tap-highlight-color: transparent;
 
     i {
         display: inline;
@@ -66,5 +67,23 @@
 .section--home-intro {
     @include media($screen-sm) {
         margin-top: -2em;
+    }
+}
+
+.home {
+    @include media($max-sm) {
+        .icon-logo {
+            svg {
+                margin-top: -20px;
+                height: 80px;
+                transform: rotate(-10deg);
+                margin-bottom: -65px;
+                width: auto;
+            }
+        }
+
+        .font--headline {
+            padding-top: 2em;
+        }
     }
 }

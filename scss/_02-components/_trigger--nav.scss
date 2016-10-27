@@ -4,6 +4,7 @@
     top: 1px;
     display: block;
     -webkit-tap-highlight-color: transparent;
+    z-index: 99;
 
     &:hover {
         cursor: pointer;
