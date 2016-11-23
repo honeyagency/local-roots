@@ -6,7 +6,8 @@
 {% endblock %}
 <body class="{{body_class}}" data-template="base.twig">
 {% block header %}
-	<header class="header bg--yellow flex flex-wrap justify--between spacing--gutter spacing--vert-1 font--semi-bold align--center">
+	<header class="header bg--yellow flex flex-wrap justify--between spacing--gutter spacing--vert-1 font--semi-bold align--center {% if "now"|date("U") < "1480270210" %}with-tag{% endif %}">
+	
 		<a class="hdr-logo-link" href="/" rel="home">
 			{% if post.post_name == 'home'  %}
 				<i class="icon-logo" data-grunticon-embed></i>
@@ -30,9 +31,21 @@
 					{{home.intro_text}}
 				</div>
 			</div>
+			
 		{% endif %}
 	{% endblock %}
 </header>
+{% if post.post_name == 'home'  %}
+	{% if "now"|date("U") < "1480270210" %}
+			
+		
+<div class="text--center bg--green spacing--vert-2 top--border section--tag">
+	<i class="icon-tomato " data-grunticon-embed></i>
+	<h3 class="color--yellow mar--bot-half">Give Some Local Love</h3>
+	<a href="https://a.zozi.com/#/express/local-roots-food-toursca/giftcards" class="button border--actual-4 color--yellow text--uppercase font--bold letter--1">Shop Local</a>
+</div>
+{% endif %}
+{% endif %}
 {# {{header.image|.}} #}
 {% if header.image.file  %}
 	<section class="header-image">

@@ -1,0 +1,33 @@
+@mixin expand {
+    0% {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 0;
+        border-top-color: transparent;
+    }
+
+    100% {
+        padding-top: 2.45rem;
+        padding-bottom: 2.45rem;
+        height: auto;
+        border-top-color: black;
+    }
+}
+
+@keyframes expand {
+    @include expand;
+}
+
+.section--tag {
+	// border-top-color: transparent;
+    // padding-top: 0;
+    // height: 0;
+    // padding-bottom: 0;
+
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+
+    // animation-timing-function: cubic-bezier(0.04, 0.26, 0.27, 0.95);
+    animation-timing-function: ease-in-out;
+    // animation-name: expand;
+}
