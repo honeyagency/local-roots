@@ -131,69 +131,6 @@
         "homepage": "https://wordpress.org/plugins/timber-library/"
     },
     {
-        "name": "twig/twig",
-        "version": "v1.25.0",
-        "version_normalized": "1.25.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
-            "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.7"
-        },
-        "require-dev": {
-            "symfony/debug": "~2.7",
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2016-09-21 23:05:12",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.25-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "http://twig.sensiolabs.org/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
-        ]
-    },
-    {
         "name": "asm89/twig-cache-extension",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",
@@ -356,18 +293,81 @@
         ]
     },
     {
-        "name": "timber/timber",
-        "version": "1.1.6",
-        "version_normalized": "1.1.6.0",
+        "name": "twig/twig",
+        "version": "v1.30.0",
+        "version_normalized": "1.30.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/timber/timber.git",
-            "reference": "7631b3dd3e37a100c6cbc23522b1f3630e907d58"
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/timber/timber/zipball/7631b3dd3e37a100c6cbc23522b1f3630e907d58",
-            "reference": "7631b3dd3e37a100c6cbc23522b1f3630e907d58",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
+            "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.7"
+        },
+        "require-dev": {
+            "symfony/debug": "~2.7",
+            "symfony/phpunit-bridge": "~3.2@dev"
+        },
+        "time": "2016-12-23 11:06:22",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.30-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "timber/timber",
+        "version": "1.1.12",
+        "version_normalized": "1.1.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/timber/timber.git",
+            "reference": "8efee9e234cbf2284042df98c006358bbd8a7554"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/timber/timber/zipball/8efee9e234cbf2284042df98c006358bbd8a7554",
+            "reference": "8efee9e234cbf2284042df98c006358bbd8a7554",
             "shasum": ""
         },
         "require": {
@@ -385,7 +385,7 @@
             "wpackagist-plugin/advanced-custom-fields": "4.*",
             "wpackagist-plugin/co-authors-plus": "3.*"
         },
-        "time": "2016-09-15 03:46:53",
+        "time": "2016-12-11 20:35:26",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -420,24 +420,24 @@
     },
     {
         "name": "mindkomm/timmy",
-        "version": "0.10.1",
-        "version_normalized": "0.10.1.0",
+        "version": "0.10.3",
+        "version_normalized": "0.10.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/MINDKomm/Timmy.git",
-            "reference": "fca77265c5ccdc96c925891cd4f423b6c0277a64"
+            "url": "https://github.com/MINDKomm/timmy.git",
+            "reference": "94fb445bf309c6e233150f287001c23f8efd94df"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/MINDKomm/Timmy/zipball/fca77265c5ccdc96c925891cd4f423b6c0277a64",
-            "reference": "fca77265c5ccdc96c925891cd4f423b6c0277a64",
+            "url": "https://api.github.com/repos/MINDKomm/timmy/zipball/94fb445bf309c6e233150f287001c23f8efd94df",
+            "reference": "94fb445bf309c6e233150f287001c23f8efd94df",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0",
             "timber/timber": "~1.0"
         },
-        "time": "2016-05-25 17:59:35",
+        "time": "2016-11-18 13:08:41",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -460,7 +460,7 @@
                 "homepage": "http://www.mind.ch"
             }
         ],
-        "description": "Opt-in plugin for Timber Library to make it even more convenient to work with images.",
+        "description": "Advanced image manipulation for Timber.",
         "keywords": [
             "images",
             "responsive",

@@ -271,11 +271,12 @@ class TestTimberPostGetter extends Timber_UnitTestCase {
 	}
 
 	function testGetPostsFromLoop() {
-		require_once 'php/timber-post-subclass.php';
 		$posts = $this->factory->post->create_many( 15 );
 		$this->go_to( '/' );
 		$posts = Timber::get_posts();
 		$this->assertEquals( 10, count( $posts ) );
+		$pc = new Timber\PostQuery();
+		$this->assertEquals( 10, count( $pc ) );
 	}
 
 	function testGetPostsFromArray() {
@@ -307,6 +308,16 @@ class TestTimberPostGetter extends Timber_UnitTestCase {
 		$jobs = $this->factory->post->create_many( 10, array('post_type' => 'job'));
 		$jobPosts = Timber::get_posts(array('post_type' => 'job'));
 		$this->assertEquals(10, count($jobPosts));
+	}
+
+	function testStringWithPostClass() {
+		$yes = \Timber\PostGetter::is_post_class_or_class_map('job');
+		$this->assertTrue($yes);
+	}
+
+	function testStringWithPostClassBogus() {
+		$no = \Timber\PostGetter::is_post_class_or_class_map('pants');
+		$this->assertFalse($no);
 	}
 
 	function testPostTypeReturnAgainstArgType() {

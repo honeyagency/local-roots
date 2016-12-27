@@ -64,9 +64,29 @@ Timber already comes with a set of really nice features for handling images. Esp
 
 In order to make Timmy work, you’ll have to
 
-### 1. Install Timber
+### 1. Install Timber and Timmy
 
-Install [Timber Library Plugin](https://wordpress.org/plugins/timber-library/). You don’t have to necessarily go full Timber with your theme or template. You can also just use Timber and Timmy to handle your images.
+You can either install both Timmy and Timber as plugins or use Composer.
+
+#### Install as Plugin
+
+1. Install [Timber Library Plugin](https://wordpress.org/plugins/timber-library/). You don’t have to necessarily go full Timber with your theme or template. You can also just use Timber and Timmy to handle your images.
+
+2. Then [download and install the latest version of Timmy](<https://github.com/MINDKomm/Timmy/releases/latest>). (Timmy currently can’t be found in the official WordPress plugin directory. Maybe it will be soon.)
+
+#### Install with Composer
+
+```
+composer require mindkomm/timmy
+```
+
+The benefit of installing Timmy through composer is that you add it as a dependency of your theme, which puts you in full control of the version you want to work with. Timmy requires Timber, so you won’t have to install Timber separately.
+
+Require the autoload file at the top of your **functions.php** and you’re good to go:
+
+```php
+require_once( __DIR__ . '/vendor/autoload.php' );
+```
 
 ### 2. Prepare Media Settings
 
@@ -169,7 +189,7 @@ Returns the src for a TimberImage.
 
 `get_timber_image_responsive(int $post_id|TimberImage $timber_image, string $size)`
 
-Returns the srcset, size, alt and title attributes for a TimberImage.
+Returns the srcset, size, alt and title attributes for a TimberImage. If this function is used with an SVG or GIF image, the single src will be returned instead of srcset.
 
 ##### Usage in WordPress Templates
 
@@ -313,19 +333,19 @@ This is the normal size at which the image is displayed.
 
 For each images size, you need to define a `resize` key that contains the parameters later given to the resize function (more about this on <https://github.com/timber/timber/wiki/Image-cookbook#arbitrary-resizing-of-images>).
 
-```
+```php
 'resize' => array( 370, 270 )
 ```
 
 If you do not set a second value in the array, the image will not be cropped.
 
-```
+```php
 'resize' => array( 370 )
 ```
 
 You can use a third param, which is the crop settings.
 
-```
+```php
 'resize' => array( 370, 270, 'center' )
 ```
 
@@ -341,7 +361,7 @@ These are alternative sizes when you want to use responsive images. Read more ab
 
 For high-density screen support, you can add a bigger size than the standard image, provided the original uploaded image is at least that size. To save bandwidth, it doesn’t necessarily have to be the doubled size. Maybe a resize of 1.5 will suffice.
 
-```
+```php
 'srcset' => array(
     array( 768, 329 ),
     array( 480, 206 )
@@ -350,7 +370,7 @@ For high-density screen support, you can add a bigger size than the standard ima
 
 If you want to, you can also use a **ratio number** of the size you want to use on the additional src. It will automatically scale the width and the height based on what is set in the 'resize' array.
 
-```
+```php
 'srcset' => array(
     0.3,
     0.5,
@@ -443,7 +463,7 @@ When you want to restrict image sizes to be only used for custom post types, you
 
 Say you want an image sizes only to be used for pages and an *employee* post type:
 
-```
+```php
 'post_types' => array( 'page', 'employee' )
 ```
 
@@ -451,7 +471,7 @@ Say you want an image sizes only to be used for pages and an *employee* post typ
 
 You can use `post_types' => array('all')` to always generate this size, for all post types.
 
-```
+```php
 'post_types' => array( 'all' )
 ```
 
@@ -491,13 +511,13 @@ Timmy checks the size of the original image to see if it is big enough to be res
 
 If you want to disable this and let images grow bigger than the original size, set the value to `true`:
 
-```
+```php
 'oversize' => true,
 ```
 
 Timmy also adds a style attr to the image markup to set the max-width or max-height in px. If you want to disable this, use an array with `attr` set to `false`.
 
-```
+```php
 'oversize' => array(
     'attr' => false,
 ),
@@ -509,7 +529,7 @@ Timmy also adds a style attr to the image markup to set the max-width or max-hei
 
 You will add this to `functions.php` of your theme:
 
-```
+```php
 function get_image_sizes() {
     return array(
         /**
@@ -589,4 +609,3 @@ add_filter( 'image_size_names_choose', function( $sizes ) {
 * Optimize handling of images that were not found
 * Include responsive image functions for `<picture>` element.
 * Make `letterbox` option work properly in combination with `oversize` option.
-* Write tests.

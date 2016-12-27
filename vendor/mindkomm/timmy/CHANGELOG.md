@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.3 - 2016-11-18
+
+- Fix an error when Timmy blocked images showing up in the Media Grid view in the backend.
+
+## 0.10.2 - 2016-10-11
+
+- Optimized function `get_timber_image_responsive_src()` to directly return the image source when the image is an SVG or a GIF.
+
 ## 0.10.1 - 2016-05-25
 
 - Added composer.json to make it possible to load Timmy through Composer.

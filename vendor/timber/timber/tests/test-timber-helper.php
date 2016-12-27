@@ -40,9 +40,15 @@
 			$this->assertStringStartsWith('<div id="respond"', $form);
 		}
 
+		function testTrimCharacters() {
+			$text    = "Sometimes you need to do such weird things like remove all comments from your project.";
+			$trimmed = \Timber\TextHelper::trim_characters( $text, 20 );
+			$this->assertEquals( "Sometimes yo&hellip;", $trimmed );
+		}
+
 		function testCloseTagsWithSelfClosingTags(){
 			$p = '<p>My thing is this <hr>Whatever';
-			$html = TimberHelper::close_tags($p);
+			$html = \Timber\Helper::close_tags($p);
 			$this->assertEquals('<p>My thing is this <hr />Whatever</p>', $html);
 		}
 
@@ -71,7 +77,7 @@
 
 		function testCloseTags() {
 			$str = '<a href="http://wordpress.org">Hi!';
-			$closed = TimberHelper::close_tags($str);
+			$closed = Timber\TextHelper::close_tags($str);
 			$this->assertEquals($str.'</a>', $closed);
 		}
 
@@ -99,6 +105,19 @@
 			$this->assertEquals(1, $index);
 			$obj = TimberHelper::get_object_by_property($arr, 'skill', 'cooking');
 			$this->assertEquals('austin', $obj->name);
+		}
+
+		function testGetArrayIndexByProperty(){
+			$obj1 = array();
+			$obj1['name'] = 'mark';
+			$obj1['skill'] = 'acro yoga';
+			$obj2 = array();
+			$obj2['name'] = 'austin';
+			$obj2['skill'] = 'cooking';
+			$arr = array($obj1, $obj2);
+			$index = \Timber\Helper::get_object_index_by_property($arr, 'skill', 'cooking');
+			$this->assertEquals(1, $index);
+			$this->assertFalse(\Timber\Helper::get_object_index_by_property('butts', 'skill', 'cooking'));
 		}
 
 		/**
@@ -171,34 +190,4 @@
 			$this->assertEquals('Robbie', $people[2]->name);
 			$this->assertEquals(1984, $people[1]->year);
 		}
-
-		function testPaginateLinksWithTrailingSlash() {
-			$args = array('total' => 20);
-			$this->setPermalinkStructure('/%year%/%post_id%/');
-			$pagination = \Timber\Pagination::paginate_links($args);
-			foreach($pagination as $page) {
-				if(array_key_exists('link', $page) && !empty($page['link'])) {
-					$this->assertStringEndsWith('/', $page['link']);
-				}
-			}
-		}
-
-		function endsWith($string, $test) {
-		    $strlen = strlen($string);
-		    $testlen = strlen($test);
-		    if ($testlen > $strlen) return false;
-		    return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
-		}
-
-		function testPaginateLinksWithOutTrailingSlash() {
-			$args = array('total' => 20);
-			$this->setPermalinkStructure('/%year%/%post_id%');
-			$pagination = \Timber\Pagination::paginate_links($args);
-			foreach($pagination as $page) {
-				if(array_key_exists('link', $page) && !empty($page['link'])) {
-					$this->assertFalse( self::endsWith(substr( $page['link'], - 1 ), '/') );
-				}
-			}
-		}		
-
 	}

@@ -495,12 +495,29 @@
 			$this->assertEquals(8, count($parent->children()));
 		}
 
+		function testPostChildrenOfInheritStatus(){
+			$parent_id = $this->factory->post->create();
+			$children = $this->factory->post->create_many(4, array('post_parent' => $parent_id));
+			$children = $this->factory->post->create_many(4, array('post_parent' => $parent_id,
+			                                                       'post_status' => 'inherit'));
+			$parent = new TimberPost($parent_id);
+			$this->assertEquals(8, count($parent->children()));
+		}
+
 		function testPostChildrenOfParentType(){
 			$parent_id = $this->factory->post->create(array('post_type' => 'foo'));
 			$children = $this->factory->post->create_many(8, array('post_parent' => $parent_id));
 			$children = $this->factory->post->create_many(4, array('post_parent' => $parent_id, 'post_type' => 'foo'));
 			$parent = new TimberPost($parent_id);
 			$this->assertEquals(4, count($parent->children('parent')));
+		}
+
+		function testPostChildrenWithArray(){
+			$parent_id = $this->factory->post->create(array('post_type' => 'foo'));
+			$children = $this->factory->post->create_many(8, array('post_parent' => $parent_id, 'post_type' => 'bar'));
+			$children = $this->factory->post->create_many(4, array('post_parent' => $parent_id, 'post_type' => 'foo'));
+			$parent = new TimberPost($parent_id);
+			$this->assertEquals(12, count($parent->children(array('foo', 'bar'))));
 		}
 
 		function testPostNoConstructorArgument(){
@@ -617,6 +634,27 @@
 			// test multiple taxonomies
 			$post_tag_and_team_terms = $post->terms(array('post_tag','team'));
 			$this->assertEquals(count($post_tag_terms) + count($post_team_terms), count($post_tag_and_team_terms));
+		}
+
+		function testPostTermClass() {
+			$class_name = 'TimberTermSubclass';
+			require_once('php/timber-term-subclass.php');
+
+			// create new post
+			$pid = $this->factory->post->create();
+			$post = new TimberPost($pid);
+
+			// create a new tag, associate with post
+			$dummy_tag = wp_insert_term('whatever', 'post_tag');
+			wp_set_object_terms($pid, $dummy_tag['term_id'], 'post_tag', true);
+
+			// test return class
+			$terms = $post->terms('post_tag', true, $class_name);
+			$this->assertEquals($class_name, get_class($terms[0]));
+
+			// test return class for deprecated $post->get_terms
+			$get_terms = $post->get_terms('post_tag', true, $class_name);
+			$this->assertEquals($class_name, get_class($get_terms[0]));
 		}
 
 		function testPostContentLength() {

@@ -122,6 +122,16 @@ class TestTimber extends Timber_UnitTestCase {
 		$this->assertEquals(3, count($posts));
 	}
 
+	function testGetPostsCollection() {
+		$pids = array();
+		$pids[] = $this->factory->post->create();
+		$pids[] = $this->factory->post->create();
+		$pids[] = $this->factory->post->create();
+		$posts = new Timber\PostCollection($pids);
+		$this->assertEquals(3, count($posts));
+		$this->assertEquals('Timber\PostCollection', get_class($posts));
+	}
+
 	function testUserInContextAnon() {
 		$context = Timber::get_context();
 		$this->assertArrayHasKey( 'user', $context );
@@ -143,7 +153,7 @@ class TestTimber extends Timber_UnitTestCase {
 	function testQueryPostsInContext(){
         $context = Timber::get_context();
         $this->assertArrayHasKey( 'posts', $context );
-        $this->assertInstanceOf( 'TimberQueryIterator', $context['posts'] );
+        $this->assertInstanceOf( 'Timber\QueryIterator', $context['posts'] );
 	}
 
 	/* Terms */
@@ -208,6 +218,11 @@ class TestTimber extends Timber_UnitTestCase {
     	$calling_file = LocationManager::get_calling_script_file();
     	$file = getcwd().'/tests/test-timber.php';
     	$this->assertEquals($calling_file, $file);
+    }
+
+    function testCompileNull() {
+    	$str = Timber::compile('assets/single-course.twig', null);
+    	$this->assertEquals('I am single course', $str);
     }
 
 }

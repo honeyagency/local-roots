@@ -53,6 +53,7 @@ class Twig {
 		$twig->addFilter(new \Twig_SimpleFilter('stripshortcodes', 'strip_shortcodes'));
 		$twig->addFilter(new \Twig_SimpleFilter('array', array($this, 'to_array')));
 		$twig->addFilter(new \Twig_SimpleFilter('excerpt', 'wp_trim_words'));
+		$twig->addFilter(new \Twig_SimpleFilter('excerpt_chars', array('Timber\TextHelper','trim_characters')));
 		$twig->addFilter(new \Twig_SimpleFilter('function', array($this, 'exec_function')));
 		$twig->addFilter(new \Twig_SimpleFilter('pretags', array($this, 'twig_pretags')));
 		$twig->addFilter(new \Twig_SimpleFilter('sanitize', 'sanitize_title'));
@@ -70,7 +71,7 @@ class Twig {
 		$twig->addFilter(new \Twig_SimpleFilter('date', array($this, 'intl_date')));
 
 		$twig->addFilter(new \Twig_SimpleFilter('truncate', function( $text, $len ) {
-					return Helper::trim_words($text, $len);
+					return TextHelper::trim_words($text, $len);
 				} ));
 
 		/* actions and filters */
@@ -219,18 +220,18 @@ class Twig {
 	 */
 	public function add_timber_escapers( $twig ) {
 
-		$twig->getExtension('core')->setEscaper('esc_url', function( \Twig_Environment $env, $string ) {
+		$twig->getExtension('Twig_Extension_Core')->setEscaper('esc_url', function( \Twig_Environment $env, $string ) {
 			return esc_url( $string );
 		});
-		$twig->getExtension('core')->setEscaper('wp_kses_post', function( \Twig_Environment $env, $string ) {
+		$twig->getExtension('Twig_Extension_Core')->setEscaper('wp_kses_post', function( \Twig_Environment $env, $string ) {
 			return wp_kses_post( $string );
 		});
 
-		$twig->getExtension('core')->setEscaper('esc_html', function( \Twig_Environment $env, $string ) {
+		$twig->getExtension('Twig_Extension_Core')->setEscaper('esc_html', function( \Twig_Environment $env, $string ) {
 			return esc_html( $string );
 		});
 
-		$twig->getExtension('core')->setEscaper('esc_js', function( \Twig_Environment $env, $string ) {
+		$twig->getExtension('Twig_Extension_Core')->setEscaper('esc_js', function( \Twig_Environment $env, $string ) {
 			return esc_js( $string );
 		});
 
@@ -317,7 +318,7 @@ class Twig {
 	 * @param string $format_future
 	 * @return string
 	 */
-	public function time_ago( $from, $to = null, $format_past = '%s ago', $format_future = '%s from now' ) {
+	public static function time_ago( $from, $to = null, $format_past = '%s ago', $format_future = '%s from now' ) {
 		$to = $to === null ? time() : $to;
 		$to = is_int($to) ? $to : strtotime($to);
 		$from = is_int($from) ? $from : strtotime($from);
