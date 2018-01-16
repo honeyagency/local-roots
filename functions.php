@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+
 
 set_post_thumbnail_size(0, 0);
 
