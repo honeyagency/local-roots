@@ -16,7 +16,7 @@
 		</div>
 	</section>
 	{% for tour in tours %}
-		<article class="{% if current %}{% if current == tour.title %}current{% endif %}{% elseif loop.first %}current{% endif %} tours tour-{{loop.index}}" data-tour="tourIndex-{{loop.index}}">
+		<article class="{% if current %}{% if current == tour.title|lower|replace(' ','-') %}current{% endif %}{% elseif loop.first %}current{% endif %} tours tour-{{loop.index}}" data-tour="tourIndex-{{loop.index}}">
 		<section class="spacing--gutter spacing--dsk-horiz-3 spacing--lg-horiz-6 spacing--vert-1">
 			<h2>{{tour.title}}</h2>
 			<p class="font--headline font--semi-bold">{{tour.subtitle}}</p>
