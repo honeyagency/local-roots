@@ -158,6 +158,70 @@ a {
                 }
             }
         }
+
+        &:nth-of-type(13) {
+            &:hover {
+                &:before {
+                    background-color: map-get($blue, main);
+                }
+            }
+        }
+
+        &:nth-of-type(14) {
+            &:hover {
+                &:before {
+                    background-color: map-get($green, main);
+                }
+            }
+        }
+
+        &:nth-of-type(15) {
+            &:hover {
+                &:before {
+                    background-color: map-get($yellow, dark);
+                }
+            }
+        }
+
+        &:nth-of-type(16) {
+            &:hover {
+                &:before {
+                    background-color: map-get($red, main);
+                }
+            }
+        }
+
+        &:nth-of-type(17) {
+            &:hover {
+                &:before {
+                    background-color: map-get($blue, main);
+                }
+            }
+        }
+
+        &:nth-of-type(18) {
+            &:hover {
+                &:before {
+                    background-color: map-get($green, main);
+                }
+            }
+        }
+
+        &:nth-of-type(19) {
+            &:hover {
+                &:before {
+                    background-color: map-get($yellow, dark);
+                }
+            }
+        }
+
+        &:nth-of-type(20) {
+            &:hover {
+                &:before {
+                    background-color: map-get($red, main);
+                }
+            }
+        }
     }
 }
 
