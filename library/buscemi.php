@@ -93,6 +93,21 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
+// added 12/4/2019
+function remove_media_attachments() {
+    if ( is_attachment() ) {
+        global $post;
+        if ( $post && $post->post_parent ) {
+            wp_redirect( esc_url( get_permalink( $post->post_parent ) ), 301 );
+            exit;
+        } else {
+            wp_redirect( esc_url( home_url( '/' ) ), 301 );
+            exit;
+        }
+    }
+}
+add_action( 'template_redirect', 'remove_media_attachments' );
+
 require_once 'functions--custom-fields.php';
 require_once 'functions--custom-posts.php';
 
